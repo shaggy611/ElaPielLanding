@@ -1,0 +1,19 @@
+@mixin crm_data_block {
+
+}
+
+@mixin button_basic_style {
+
+}
+
+@mixin mobile {
+  @media (max-width: 991px) {
+    @content;
+  }
+}
+
+@mixin notebook {
+  @media (min-width: 768px) and (max-width: 1400px) {
+    @content;
+  }
+}
