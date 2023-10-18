@@ -1,8 +1,5 @@
-@import 'mixins';
-
 body {
-  font-family: 'Exo 2';
-  //font-family: 'Cinzel', serif;
+  font-family: "Exo 2";
 }
 
 :root {
@@ -22,4 +19,4 @@ a {
   max-width: 1440px;
   width: 100%;
   margin: 0 auto;
-}
+}/*# sourceMappingURL=common_styles.css.map */

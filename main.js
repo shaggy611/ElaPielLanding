@@ -1,6 +1,7 @@
-import './style.scss';
 import 'normalize.css';
-import './style_mobile.scss';
+import './styles/fonts.scss'
+import './styles/style.scss';
+import './styles/style_mobile.scss';
 
 // ======================================================
 
