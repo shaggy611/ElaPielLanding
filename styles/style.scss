@@ -171,9 +171,537 @@
     display: flex;
     align-items: center;
 
-    & svg {
+    & img {
       margin-right: 10px;
     }
   }
 }
 // + Welcome screen
+
+// Peelings features
+.peelings-features {
+  padding: 65px 0;
+
+  &__subtext {
+    color: #0033a1;
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 300;
+    border-radius: 100px;
+    border: 1px solid #e4d9c6;
+    padding: 7px 15px;
+    margin-bottom: 17px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 146px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    box-sizing: border-box;
+
+    & img {
+      margin-right: 5px;
+    }
+  }
+
+  &__second-heading {
+    margin-bottom: 63px;
+    text-align: center;
+    width: 100%;
+  }
+
+  &__feature-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 17px;
+  }
+
+  &__feature {
+    max-width: 394px;
+    height: 410px;
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+    border-radius: 10px;
+    padding: 0 43px 39px 32px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: end;
+    position: relative;
+
+    & .peelings-features__feature-title,
+    & .peelings-features__feature-subtitle {
+      transform: translateY(1px);
+      -webkit-transform: translateY(1px);
+      -moz-transform: translateY(1px);
+      -ms-transform: translateY(1px);
+      -o-transform: translateY(1px);
+      transition: transform 0.3s ease-in-out;
+      -webkit-transition: transform 0.3s ease-in-out;
+      -moz-transition: transform 0.3s ease-in-out;
+      -ms-transition: transform 0.3s ease-in-out;
+      -o-transition: transform 0.3s ease-in-out;
+    }
+
+    &::after {
+      opacity: 1;
+      transition: all 0.2s ease-in-out;
+      -webkit-transition: all 0.2s ease-in-out;
+      -moz-transition: all 0.2s ease-in-out;
+      -ms-transition: all 0.2s ease-in-out;
+      -o-transition: all 0.2s ease-in-out;
+    }
+
+    &:hover {
+      & .peelings-features__feature-title,
+      & .peelings-features__feature-subtitle {
+        // transform: translateY(-10px);
+        // -webkit-transform: translateY(-10px);
+        // -moz-transform: translateY(-10px);
+        // -ms-transform: translateY(-10px);
+        // -o-transform: translateY(-10px);
+      }
+
+      & .peelings-features__feature-subtitle {
+        animation: 0.4s ease-in 1 apearing;
+        -webkit-animation: 0.4s ease-in 1 apearing;
+        display: block;
+        opacity: 1;
+        height: 100%;
+      }
+
+      & .peelings-features__feature-title {
+        color: #1f4b98;
+
+        &::after {
+          content: ' ';
+        }
+      }
+
+      &::after {
+        opacity: 0.15;
+      }
+    }
+  }
+
+  &__feature-1::after,
+  &__feature-2::after,
+  &__feature-3::after {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: -2;
+  }
+
+  &__feature-1::after {
+    content: url('/images/feature_1.png');
+  }
+
+  &__feature-2::after {
+    content: url('/images/feature_2.png');
+  }
+
+  &__feature-3::after {
+    content: url('/images/feature_3.png');
+  }
+
+  &__feature-title {
+    color: #fff;
+    font-family: 'Cinzel';
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 46px;
+    max-width: 274px;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+
+    &::after {
+      content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="19" viewBox="0 0 12 19" fill="none"><path d="M1.44336 17.887L9.88689 9.44344L1.44336 0.99991" stroke="%23FCF5E8" stroke-width="2"/></svg>');
+    }
+  }
+
+  &__feature-subtitle {
+    color: #1f4b98;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    margin: 0;
+    max-width: 295px;
+    max-height: 92px;
+    height: 0%;
+    display: none;
+    opacity: 0;
+  }
+
+  @keyframes apearing {
+    from {
+      display: none;
+      opacity: 0;
+      height: 0%;
+    }
+
+    to {
+      display: block;
+      opacity: 1;
+      height: 100%;
+    }
+  }
+}
+// + Peelings features
+
+// Top products
+.top-products {
+  padding-bottom: 88px;
+  background-color: rgba(218, 231, 255, 0.29);
+
+  &__second-heading {
+    width: 100%;
+    padding-bottom: 71px;
+    background-color: #fff;
+  }
+
+  &__product {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  &__product:first-child {
+    padding-top: 94px;
+  }
+
+  &__product:last-child {
+    padding-top: 71px;
+  }
+
+  &__product-gallery {
+    max-width: 646px;
+    display: flex;
+  }
+
+  &__product-gallery_preview-wrapper {
+    max-height: 437.3px;
+    overflow: hidden;
+  }
+
+  &__product-gallery_preview {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__product-gallery_preview-scroll-up {
+    transform: translateY(-144px);
+    -webkit-transform: translateY(-144px);
+    -moz-transform: translateY(-144px);
+    -ms-transform: translateY(-144px);
+    -o-transform: translateY(-144px);
+    transition: all 0.7s ease-in;
+    -webkit-transition: all 0.7s ease-in;
+    -moz-transition: all 0.7s ease-in;
+    -ms-transition: all 0.7s ease-in;
+    -o-transition: all 0.7s ease-in;
+  }
+
+  &__product-gallery_preview-scroll-down {
+    transform: translateY(144px);
+    -webkit-transform: translateY(144px);
+    -moz-transform: translateY(144px);
+    -ms-transform: translateY(144px);
+    -o-transform: translateY(144px);
+    transition: all 0.7s ease-in;
+    -webkit-transition: all 0.7s ease-in;
+    -moz-transition: all 0.7s ease-in;
+    -ms-transition: all 0.7s ease-in;
+    -o-transition: all 0.7s ease-in;
+  }
+
+  &__product-gallery_item {
+    width: 136.8px;
+    height: 136.8px;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 10px;
+    z-index: 10;
+    border: 1px solid transparent;
+
+    &:focus {
+      border: 1px solid #2059b9;
+    }
+
+    & figure {
+      margin: 0;
+    }
+
+    & img {
+      max-width: 136.8px;
+      max-height: 136.8px;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -10;
+    }
+  }
+
+  &__product-gallery_navigation {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-right: 10px;
+  }
+
+  &__product-gallery_arrows-wrapper {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 56px;
+  }
+
+  &__product-gallery_arrow-right,
+  &__product-gallery_arrow-left {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+
+    &:hover svg {
+      fill: #1f4b98;
+    }
+
+    &:hover svg path,
+    &:hover svg circle {
+      stroke: #fff;
+    }
+  }
+
+  &__product-gallery_view {
+    min-width: 499px;
+    height: 538px;
+    border-radius: 10px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+
+    & img {
+      max-width: 499px;
+      max-height: 538px;
+      min-height: 538px;
+      width: 100%;
+
+      object-fit: cover;
+      border-radius: 10px;
+    }
+  }
+
+  &__product-gallery_lense {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border: 1px solid #333;
+  }
+
+  &__product-description-wrapper {
+    padding-left: 24px;
+  }
+
+  &__product-description_title {
+    color: #1f4b98;
+    font-family: 'Cinzel';
+    font-size: 30px;
+    font-weight: 500;
+    line-height: normal;
+    margin: 0;
+  }
+
+  &__product-description_subtitle {
+    color: #aaa;
+    font-family: 'Exo 2';
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    margin-bottom: 31px;
+    display: block;
+  }
+
+  &__product-description_substances-list {
+    list-style: none;
+    margin-bottom: 12px;
+    padding: 0;
+    margin-top: 0;
+
+    & li {
+      color: #0033a1;
+      font-family: 'Exo 2';
+      font-size: 17px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 23px;
+    }
+  }
+
+  &__product-description_volume {
+    color: #0033a1;
+    font-family: 'Exo 2';
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 41px;
+    display: block;
+  }
+
+  &__product-description_description-wrapper {
+    color: #1f4b98;
+    font-family: 'Exo 2';
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 19px;
+    margin-bottom: 45px;
+
+    & p {
+      margin: 0;
+    }
+
+    & p:first-child {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__product-description_problems-solving {
+    border-radius: 5px;
+    border: 1px solid #d7e5ff;
+    padding: 15px 0 18px 24px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__product-description_problems-solving--add-padding {
+    padding: 32px 0 32px 24px;
+  }
+
+  &__product-description_problems-solving-title {
+    color: #0033a1;
+    font-family: 'Exo 2';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    text-transform: uppercase;
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 7px;
+  }
+
+  &__product-description_problems-solving-item {
+    color: #1f4b98;
+    font-family: 'Exo 2';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    margin-right: 6px;
+    margin-bottom: 5px;
+
+    & svg {
+      margin-right: 6px;
+    }
+  }
+}
+// + Top products
+
+// Three steps
+.three-steps {
+  padding-top: 84px;
+
+  &__cta-button {
+    margin-bottom: 84px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  &__second-heading {
+    padding-bottom: 96px;
+  }
+
+  &__steps-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  &__step-item {
+    max-width: 400px;
+    width: 100%;
+    height: 350px;
+    box-sizing: border-box;
+    padding-left: 72px;
+    overflow: hidden;
+    border-radius: 10px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+
+  &__step-item_1 {
+    background-image: url('/images/three_steps_img_1.jpg');
+  }
+
+  &__step-item_2 {
+    background-image: url('/images/three_steps_img_2.jpg');
+  }
+
+  &__step-item_3 {
+    background-color: red;
+    background-image: url('/images/three_steps_img_3.jpg');
+  }
+
+  &__step-item-step {
+    color: #fff;
+    text-align: right;
+    font-family: 'Cinzel';
+    font-size: 350px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    opacity: 0.2;
+    position: absolute;
+  }
+
+  &__step-item-title {
+    color: #1f4b98;
+    font-family: 'Exo 2';
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 19px;
+  }
+
+  &__step-item-subtitle {
+    color: #fff;
+    font-family: Exo 2;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    display: none;
+  }
+}
+// + Three steps
