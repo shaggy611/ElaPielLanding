@@ -52,3 +52,24 @@ a {
   text-decoration: none;
   display: block;
 }
+
+.small-bage {
+  color: #0033a1;
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 300;
+  border-radius: 100px;
+  border: 1px solid #e4d9c6;
+  padding: 7px 15px;
+  max-width: fit-content;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  box-sizing: border-box;
+  max-height: 35px;
+
+  & img {
+    margin-right: 5px;
+  }
+}

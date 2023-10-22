@@ -183,26 +183,9 @@
   padding: 65px 0;
 
   &__subtext {
-    color: #0033a1;
-    font-size: 21px;
-    font-style: normal;
-    font-weight: 300;
-    border-radius: 100px;
-    border: 1px solid #e4d9c6;
-    padding: 7px 15px;
     margin-bottom: 17px;
     margin-left: auto;
     margin-right: auto;
-    max-width: 146px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    box-sizing: border-box;
-
-    & img {
-      margin-right: 5px;
-    }
   }
 
   &__second-heading {
@@ -627,6 +610,7 @@
 // Three steps
 .three-steps {
   padding-top: 84px;
+  padding-bottom: 168px;
 
   &__cta-button {
     margin-bottom: 84px;
@@ -655,19 +639,98 @@
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
+    padding-top: 145px;
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+
+    &::before {
+      content: ' ';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      border-radius: 10px;
+      background: linear-gradient(
+        0deg,
+        rgba(31, 75, 152, 0.9) 0%,
+        rgba(31, 75, 152, 0.9) 100%
+      );
+      opacity: 0;
+      transition: all 0.3s ease;
+      -webkit-transition: all 0.3s ease;
+      -moz-transition: all 0.3s ease;
+      -ms-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+    }
+
+    &:hover {
+      transform: translateY(52px);
+      -webkit-transform: translateY(52px);
+      -moz-transform: translateY(52px);
+      -ms-transform: translateY(52px);
+      -o-transform: translateY(52px);
+      padding-top: 120px;
+
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__step-item:hover &__step-item-title {
+    color: #e4d9c6;
+    transform: translateY(-30px);
+    -webkit-transform: translateY(-30px);
+    -moz-transform: translateY(-30px);
+    -ms-transform: translateY(-30px);
+    -o-transform: translateY(-30px);
+  }
+
+  &__step-item:hover &__step-item-subtitle {
+    // visibility: visible;
+    opacity: 1;
+    color: #fff;
+    transform: translateY(-30px);
+    -webkit-transform: translateY(-30px);
+    -moz-transform: translateY(-30px);
+    -ms-transform: translateY(-30px);
+    -o-transform: translateY(-30px);
+  }
+
+  &__step-item_3:hover &__step-item-title {
+    transform: translateY(-70px) !important;
+    -webkit-transform: translateY(-70px) !important;
+    -moz-transform: translateY(-70px) !important;
+    -ms-transform: translateY(-70px) !important;
+    -o-transform: translateY(-70px) !important;
+  }
+
+  &__step-item_3:hover &__step-item-subtitle {
+    transform: translateY(-60px) !important;
+    -webkit-transform: translateY(-60px) !important;
+    -moz-transform: translateY(-60px) !important;
+    -ms-transform: translateY(-60px) !important;
+    -o-transform: translateY(-60px) !important;
   }
 
   &__step-item_1 {
     background-image: url('/images/three_steps_img_1.jpg');
+    background-position: -10%;
   }
 
   &__step-item_2 {
     background-image: url('/images/three_steps_img_2.jpg');
+    background-position: -185px -194px;
+    background-size: 209%;
   }
 
   &__step-item_3 {
-    background-color: red;
     background-image: url('/images/three_steps_img_3.jpg');
+    padding-left: 45px;
   }
 
   &__step-item-step {
@@ -680,6 +743,13 @@
     line-height: normal;
     opacity: 0.2;
     position: absolute;
+    left: -9px;
+    top: -43px;
+  }
+
+  &__step-item-step--add-position {
+    left: 17px;
+    top: -43px;
   }
 
   &__step-item-title {
@@ -692,16 +762,626 @@
     letter-spacing: 1.5px;
     text-transform: uppercase;
     margin-bottom: 19px;
+    margin-top: 0;
+    margin-bottom: 19px;
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
   }
 
   &__step-item-subtitle {
-    color: #fff;
+    color: #1f4b98;
     font-family: Exo 2;
     font-size: 19px;
     font-style: normal;
     font-weight: 300;
     line-height: normal;
-    display: none;
+    // visibility: hidden;
+    opacity: 0;
+    margin: 0;
+    max-width: 307px;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
   }
 }
 // + Three steps
+
+// About
+.about {
+  padding-bottom: 118px;
+
+  &__second-heading_wrapper {
+    display: flex;
+    justify-content: left;
+    margin-bottom: 79px;
+    text-align: left;
+    align-items: center;
+  }
+
+  &__second-heading {
+    margin-right: 42px;
+    text-align: left;
+  }
+
+  &__info-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 46px;
+  }
+
+  &__photo {
+    border-radius: 10px;
+    max-width: 597px;
+    width: 100%;
+    max-height: 741px;
+  }
+
+  &__info-heading {
+    display: flex;
+    margin-bottom: 12px;
+    margin-top: 0;
+
+    & h3 {
+      margin: 0;
+      color: #1f4b98;
+      font-family: 'Exo 2';
+      font-size: 30px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: normal;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    & svg {
+      margin-right: 22px;
+    }
+  }
+
+  &__info-paragraph,
+  &__info-list li {
+    color: #1f4b98;
+    font-family: 'Exo 2';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 25px;
+  }
+
+  &__info-paragraph {
+    margin-top: 0;
+    margin-bottom: 54px;
+  }
+
+  &__info-list {
+    margin-bottom: 49px;
+    margin-top: 0;
+    padding-inline-start: 20px;
+    list-style-type: none;
+    max-width: 539px;
+    list-style-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="9" viewBox="0 0 10 9" fill="none"><path d="M3.64035 2.36138C3.6375 2.30434 3.63179 2.25016 3.63179 2.19312C3.63465 1.64559 3.66601 1.10375 3.8799 0.587587C3.95119 0.416481 4.04245 0.259635 4.18218 0.13701C4.40177 -0.0512057 4.64702 -0.0455022 4.85805 0.15412C5.00919 0.296708 5.10045 0.473516 5.17459 0.664584C5.29722 0.986832 5.3571 1.32334 5.37136 1.66555C5.38277 1.89654 5.37421 2.13038 5.37421 2.36138C5.38277 2.36423 5.39132 2.36708 5.39988 2.36993C5.41984 2.34997 5.44266 2.33001 5.46262 2.31004C5.80483 1.95358 6.16985 1.62562 6.60902 1.39178C6.83146 1.27201 7.0653 1.18075 7.32481 1.18075C7.62995 1.18075 7.81816 1.36611 7.82957 1.6684C7.83813 1.87658 7.77824 2.0705 7.69269 2.25871C7.51017 2.65796 7.23926 2.99732 6.93982 3.31386C6.84286 3.41367 6.74591 3.51348 6.64039 3.62185C6.66891 3.6247 6.69172 3.6247 6.71454 3.6247C6.90275 3.6247 7.09097 3.619 7.27633 3.6304C7.62424 3.64752 7.96645 3.69885 8.29441 3.81292C8.46551 3.8728 8.62806 3.9498 8.77065 4.06387C8.89612 4.16653 8.99879 4.28916 9.01305 4.46026C9.03016 4.64563 8.9389 4.78536 8.80772 4.89943C8.6024 5.08195 8.35144 5.17605 8.08908 5.2445C7.68698 5.35001 7.27633 5.37853 6.85998 5.37568C6.78868 5.37568 6.72024 5.37568 6.62613 5.37568C6.66606 5.41275 6.69172 5.43841 6.71739 5.46123C7.0653 5.79488 7.3847 6.15135 7.61569 6.57911C7.74972 6.82437 7.84953 7.08102 7.82957 7.3719C7.81246 7.62 7.64135 7.79681 7.39325 7.81392C7.09097 7.83674 6.82575 7.72837 6.5691 7.58578C6.14419 7.35194 5.78772 7.02969 5.45691 6.68178C5.4398 6.66467 5.42554 6.64756 5.39418 6.61619C5.39132 6.65326 5.39132 6.67607 5.38847 6.70174C5.37421 7.00973 5.37421 7.31772 5.34284 7.62571C5.30862 7.96507 5.22877 8.29872 5.04911 8.59816C4.98923 8.69797 4.91223 8.79493 4.82668 8.87192C4.6242 9.04873 4.38466 9.04018 4.18218 8.86052C4.02819 8.72363 3.93123 8.54682 3.85708 8.35576C3.74016 8.05632 3.67742 7.74263 3.65746 7.42038C3.6432 7.17798 3.6432 6.93273 3.6375 6.68748C3.6375 6.67037 3.63465 6.65041 3.63179 6.61619C3.60328 6.64471 3.58331 6.66467 3.56335 6.68178C3.24396 7.01543 2.90175 7.32342 2.49965 7.55727C2.26866 7.6913 2.02626 7.79966 1.75249 7.81392C1.6926 7.81678 1.62701 7.81678 1.56713 7.80252C1.33043 7.75404 1.1907 7.58008 1.18499 7.32913C1.17929 7.08673 1.25629 6.86714 1.3618 6.65611C1.53005 6.31961 1.75819 6.02588 2.012 5.75211C2.11181 5.64374 2.21733 5.54108 2.32284 5.43841C2.33995 5.4213 2.36276 5.4156 2.38273 5.40134C2.37702 5.39279 2.37132 5.38138 2.36562 5.37282C2.3314 5.37282 2.29717 5.37282 2.26295 5.37282C1.83519 5.38138 1.40743 5.36142 0.991072 5.25875C0.731563 5.19602 0.480609 5.10761 0.266728 4.94221C0.209693 4.89658 0.15551 4.84525 0.109881 4.78822C-0.0412613 4.59144 -0.0355578 4.38041 0.121289 4.18935C0.278135 3.99543 0.494868 3.89277 0.723008 3.81292C1.05381 3.69599 1.39887 3.64466 1.74964 3.62755C1.935 3.619 2.12037 3.6247 2.30573 3.62185C2.32569 3.62185 2.34565 3.619 2.38558 3.619C2.35706 3.59048 2.3428 3.57337 2.32569 3.55626C1.99204 3.23686 1.68405 2.89465 1.44735 2.49541C1.32188 2.27867 1.22206 2.05053 1.1907 1.79958C1.15647 1.51726 1.25343 1.25775 1.54716 1.20071C1.66123 1.1779 1.78386 1.18075 1.89793 1.20356C2.24014 1.2663 2.53102 1.44311 2.80764 1.64273C3.08141 1.83951 3.32666 2.06765 3.5548 2.31004C3.57476 2.33001 3.58902 2.35567 3.60328 2.37849C3.62039 2.37278 3.62894 2.36708 3.64035 2.36138Z" fill="%231F4B98"/></svg>');
+  }
+
+  &__info-list:last-child {
+    max-width: 555px;
+  }
+}
+// + About
+
+// Ecology
+.ecology {
+  padding-bottom: 167px;
+
+  &__bage {
+    margin-bottom: 20px;
+  }
+
+  &__second-heading {
+    margin-bottom: 83px;
+    text-align: left;
+  }
+
+  &__card {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__card_img {
+  }
+
+  &__text {
+    padding-left: 56px;
+    text-align: left;
+    width: 100%;
+  }
+
+  &__text_heading {
+    color: #1f4b98;
+    font-family: 'Exo 2';
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 17px;
+    margin-top: 45px;
+    display: flex;
+  }
+
+  &__text_heading_flag {
+    display: block;
+    content: url('/images/eu_flag.jpg');
+    margin: 0 7px;
+  }
+
+  &__text_paragraph {
+    color: #1f4b98;
+    font-family: 'Exo 2';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 25px;
+    margin: 0;
+    max-width: 470px;
+    margin-bottom: 2px;
+  }
+}
+// + Ecology
+
+// Partnership
+.partnership {
+  padding: 79px 0 63px 0;
+  background-color: #1f4b98;
+
+  &__content-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__values_heading {
+    text-align: left;
+  }
+
+  &__trademark {
+    color: #fff;
+    font-family: 'Cinzel';
+    font-size: 210px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 166px; /* 79.048% */
+    text-transform: uppercase;
+    max-width: 429px;
+    padding-left: 56px;
+    position: relative;
+
+    &::before {
+      content: url('/images/partnership_pattern_img.png');
+      position: absolute;
+      left: -38%;
+      top: -9%;
+    }
+  }
+
+  &__values {
+    padding-top: 23px;
+    padding-left: 125px;
+    padding-right: 60px;
+  }
+
+  &__values_heading {
+    color: #fff;
+    margin-bottom: 15px;
+  }
+
+  &__values_definition {
+    color: #fff;
+    font-family: 'Exo 2';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27px;
+    margin-bottom: 48px;
+  }
+
+  &__values_list {
+  }
+
+  &__values_list-item {
+    display: flex;
+    margin-bottom: 36px;
+  }
+
+  &__values_list-item-digit {
+    color: #fff;
+    font-family: 'Cinzel';
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-right: 30px;
+  }
+
+  &__values_list-item-text {
+    color: #fff;
+    font-family: 'Exo 2';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    margin: 0;
+    max-width: 381px;
+
+    & b {
+      font-weight: 700;
+    }
+  }
+
+  &__values_list-item:first-child &__values_list-item-text {
+    max-width: 429px;
+  }
+
+  &__values_list-item:last-child &__values_list-item-text {
+    max-width: 487px;
+  }
+}
+// + Partnership
+
+// Cooperation
+.cooperation {
+  padding: 83px 0 125px 0;
+
+  &__cta-button {
+    margin-bottom: 84px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  &__second-heading {
+    margin-bottom: 16px;
+    width: 100%;
+  }
+
+  &__subheading {
+    color: #1f4b98;
+    text-align: center;
+    font-family: 'Exo 2';
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 100%;
+    padding-top: 0;
+    padding-bottom: 125px;
+  }
+
+  &__content-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__content-img {
+    max-width: 648px;
+    width: 100%;
+    height: 639px;
+    border-radius: 10px;
+    overflow: hidden;
+
+    & img {
+      object-fit: cover;
+      max-width: 648px;
+      width: 100%;
+      max-height: 639px;
+    }
+  }
+
+  &__content__list-title {
+    color: #1f4b98;
+    text-align: left;
+    font-family: 'Exo 2';
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 0;
+    margin-bottom: 36px;
+    padding-left: 27px;
+  }
+
+  &__content__list-item {
+    max-width: 428px;
+    width: 100%;
+    padding: 16px 27px;
+    border-radius: 6px;
+    border: 1px solid #fff;
+    display: flex;
+    margin-bottom: 10px;
+    height: 103px;
+    box-sizing: border-box;
+    align-items: flex-start;
+
+    &:hover {
+      border: 1px solid #1f4b98;
+      cursor: pointer;
+    }
+
+    &:first-child {
+      align-items: center;
+    }
+
+    &::before {
+      margin-top: 8px;
+      margin-right: 21px;
+      content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 10 9" fill="none"><path d="M3.64035 2.36138C3.6375 2.30434 3.63179 2.25016 3.63179 2.19312C3.63465 1.64559 3.66601 1.10375 3.8799 0.587587C3.95119 0.416481 4.04245 0.259635 4.18218 0.13701C4.40177 -0.0512057 4.64702 -0.0455022 4.85805 0.15412C5.00919 0.296708 5.10045 0.473516 5.17459 0.664584C5.29722 0.986832 5.3571 1.32334 5.37136 1.66555C5.38277 1.89654 5.37421 2.13038 5.37421 2.36138C5.38277 2.36423 5.39132 2.36708 5.39988 2.36993C5.41984 2.34997 5.44266 2.33001 5.46262 2.31004C5.80483 1.95358 6.16985 1.62562 6.60902 1.39178C6.83146 1.27201 7.0653 1.18075 7.32481 1.18075C7.62995 1.18075 7.81816 1.36611 7.82957 1.6684C7.83813 1.87658 7.77824 2.0705 7.69269 2.25871C7.51017 2.65796 7.23926 2.99732 6.93982 3.31386C6.84286 3.41367 6.74591 3.51348 6.64039 3.62185C6.66891 3.6247 6.69172 3.6247 6.71454 3.6247C6.90275 3.6247 7.09097 3.619 7.27633 3.6304C7.62424 3.64752 7.96645 3.69885 8.29441 3.81292C8.46551 3.8728 8.62806 3.9498 8.77065 4.06387C8.89612 4.16653 8.99879 4.28916 9.01305 4.46026C9.03016 4.64563 8.9389 4.78536 8.80772 4.89943C8.6024 5.08195 8.35144 5.17605 8.08908 5.2445C7.68698 5.35001 7.27633 5.37853 6.85998 5.37568C6.78868 5.37568 6.72024 5.37568 6.62613 5.37568C6.66606 5.41275 6.69172 5.43841 6.71739 5.46123C7.0653 5.79488 7.3847 6.15135 7.61569 6.57911C7.74972 6.82437 7.84953 7.08102 7.82957 7.3719C7.81246 7.62 7.64135 7.79681 7.39325 7.81392C7.09097 7.83674 6.82575 7.72837 6.5691 7.58578C6.14419 7.35194 5.78772 7.02969 5.45691 6.68178C5.4398 6.66467 5.42554 6.64756 5.39418 6.61619C5.39132 6.65326 5.39132 6.67607 5.38847 6.70174C5.37421 7.00973 5.37421 7.31772 5.34284 7.62571C5.30862 7.96507 5.22877 8.29872 5.04911 8.59816C4.98923 8.69797 4.91223 8.79493 4.82668 8.87192C4.6242 9.04873 4.38466 9.04018 4.18218 8.86052C4.02819 8.72363 3.93123 8.54682 3.85708 8.35576C3.74016 8.05632 3.67742 7.74263 3.65746 7.42038C3.6432 7.17798 3.6432 6.93273 3.6375 6.68748C3.6375 6.67037 3.63465 6.65041 3.63179 6.61619C3.60328 6.64471 3.58331 6.66467 3.56335 6.68178C3.24396 7.01543 2.90175 7.32342 2.49965 7.55727C2.26866 7.6913 2.02626 7.79966 1.75249 7.81392C1.6926 7.81678 1.62701 7.81678 1.56713 7.80252C1.33043 7.75404 1.1907 7.58008 1.18499 7.32913C1.17929 7.08673 1.25629 6.86714 1.3618 6.65611C1.53005 6.31961 1.75819 6.02588 2.012 5.75211C2.11181 5.64374 2.21733 5.54108 2.32284 5.43841C2.33995 5.4213 2.36276 5.4156 2.38273 5.40134C2.37702 5.39279 2.37132 5.38138 2.36562 5.37282C2.3314 5.37282 2.29717 5.37282 2.26295 5.37282C1.83519 5.38138 1.40743 5.36142 0.991072 5.25875C0.731563 5.19602 0.480609 5.10761 0.266728 4.94221C0.209693 4.89658 0.15551 4.84525 0.109881 4.78822C-0.0412613 4.59144 -0.0355578 4.38041 0.121289 4.18935C0.278135 3.99543 0.494868 3.89277 0.723008 3.81292C1.05381 3.69599 1.39887 3.64466 1.74964 3.62755C1.935 3.619 2.12037 3.6247 2.30573 3.62185C2.32569 3.62185 2.34565 3.619 2.38558 3.619C2.35706 3.59048 2.3428 3.57337 2.32569 3.55626C1.99204 3.23686 1.68405 2.89465 1.44735 2.49541C1.32188 2.27867 1.22206 2.05053 1.1907 1.79958C1.15647 1.51726 1.25343 1.25775 1.54716 1.20071C1.66123 1.1779 1.78386 1.18075 1.89793 1.20356C2.24014 1.2663 2.53102 1.44311 2.80764 1.64273C3.08141 1.83951 3.32666 2.06765 3.5548 2.31004C3.57476 2.33001 3.58902 2.35567 3.60328 2.37849C3.62039 2.37278 3.62894 2.36708 3.64035 2.36138Z" fill="%231F4B98"/></svg>');
+    }
+
+    & button {
+      margin: 0;
+      padding: 0;
+      border: none;
+      background-color: transparent;
+      color: #1f4b98;
+      font-family: 'Exo 2';
+      font-size: 30px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: normal;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      text-align: left;
+      cursor: pointer;
+    }
+  }
+
+  &__list-item-cta {
+    margin-top: 35px;
+    max-width: 428px;
+    width: 100%;
+  }
+}
+// + Cooperation
+
+// Advantages
+.advantages {
+  padding: 70px 0;
+  background-color: #1f4b98;
+
+  &__items-wrapper {
+    display: flex;
+    gap: 9px;
+  }
+
+  &__item {
+    padding: 40px 0 47px 30px;
+    border-radius: 5px;
+    border: 1.5px solid rgba(31, 75, 152, 0.11);
+    background: #fff;
+    max-width: 297px;
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 320px;
+
+    & svg {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__item:last-child {
+    padding-right: 15px;
+  }
+
+  &__item:last-child &__item-heading {
+    max-width: 255px;
+  }
+
+  &__item-heading {
+    color: #1f4b98;
+    font-family: 'Exo 2';
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: 1.25px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    max-width: 225px;
+    margin-top: 0;
+  }
+
+  &__item-text {
+    color: #1f4b98;
+    font-family: 'Exo 2';
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    max-width: 236px;
+    margin-top: 0;
+  }
+}
+// + Advantages
+
+// Five Steps
+.five-steps {
+  padding: 121px 0 161px 0;
+
+  &__heading {
+    margin-bottom: 89px;
+  }
+
+  &__steps-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+// + Five Steps
+
+// Footer
+.footer {
+  &__contacts-wrapper,
+  &__copyright-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__contacts-logo {
+    width: 48%;
+  }
+
+  &__contacts_item-content {
+  }
+
+  &__contacts {
+    padding: 58px 0 52px 0;
+    background-color: #1f4b98;
+  }
+
+  &__copyright {
+    padding: 26px 0 17px 0;
+  }
+
+  &__contacts_heading {
+    color: #fff;
+    font-family: 'Exo 2';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 26px;
+  }
+
+  &__contacts_text {
+    color: #fff;
+    font-family: 'Exo 2';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    margin: 0;
+  }
+
+  &__contacts_item:last-child {
+    align-self: self-end;
+  }
+
+  &__contacts_insta-link {
+    display: block;
+    max-height: 26px;
+  }
+
+  &__copyright-text,
+  &__copyright-madeby {
+    color: #aaa;
+    font-family: 'Exo 2';
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    margin: 0;
+  }
+
+  &__copyright-links {
+    color: #1f4b98;
+    font-family: 'Exo 2';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+  }
+
+  &__copyright-links a:first-child {
+    margin-right: 67px;
+  }
+
+  &__copyright-madeby {
+    text-align: right;
+  }
+
+  &__copyright-wrapper {
+    margin-top: 15px;
+  }
+}
+// + Footer
+
+// Policy-Offer
+.policy-offer {
+  padding: 112px 0 146px 0;
+  background-color: #ecf3ff;
+  background-image: url('/images/flower_pattern_bg.svg');
+  background-repeat: no-repeat;
+  // background-position: 80% 1%;
+  background-position: 85% 154px;
+  background-attachment: fixed;
+
+  & ul {
+    list-style: lower-latin;
+    padding-inline-start: 35px;
+  }
+
+  & a {
+    text-decoration: underline;
+    color: #1f4b98;
+  }
+
+  &__text-wrapper {
+    // background-image: url('/images/flower_pattern_bg.svg');
+    // background-repeat: no-repeat;
+    // background-position: 100% -10%;
+  }
+
+  &__text-wrapper {
+    max-width: 1007px;
+  }
+
+  &__heading {
+    color: #0033a1;
+    font-family: 'Exo 2';
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 76.923% */
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 14px;
+  }
+
+  &__subheading {
+    color: #1f4b98;
+    font-family: 'Exo 2';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    margin-top: 0;
+    margin-bottom: 50px;
+  }
+
+  &__paragraph-heading {
+    margin: 0;
+    color: #1f4b98;
+    font-family: 'Exo 2';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px;
+    text-transform: uppercase;
+  }
+
+  &__paragraph {
+    margin: 0;
+    color: #1f4b98;
+    font-family: 'Exo 2';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 20px;
+  }
+}
+// + Policy-Offer
