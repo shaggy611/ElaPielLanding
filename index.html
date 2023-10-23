@@ -56,6 +56,14 @@
                     <a class="navigation__language-changer_eng" href="#">ENG</a>
                 </li>
             </ul>
+
+            <div class="navigation__menu-toggler">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="10" viewBox="0 0 13 10" fill="none">
+                    <rect width="13" height="2" rx="1" fill="#1F4B98" />
+                    <rect y="4" width="13" height="2" rx="1" fill="#1F4B98" />
+                    <rect x="3" y="8" width="10" height="2" rx="1" fill="#1F4B98" />
+                </svg>
+            </div>
         </nav>
     </header>
     <main>
@@ -76,7 +84,7 @@
                 </div>
                 <div class="welcome-screen__subtext">
                     <img src="/images/flower-ico.svg" alt="Flower ico">
-                    Border LIne Cosmetics
+                    Border Line Cosmetics
                 </div>
             </div>
         </section>
@@ -115,6 +123,7 @@
 
             <div class="fixed-container">
                 <div class="top-products__product">
+                    <h3 class="top-products__product-description_title mobile-show">GL PEPTIDE PHYTO PEEL</h3>
                     <div class="top-products__product-gallery" id="product-gallery_1">
                         <div class="top-products__product-gallery_navigation">
                             <div class="top-products__product-gallery_preview-wrapper">
@@ -175,7 +184,7 @@
 
                     <article class="top-products__product-description">
                         <div class="top-products__product-description-wrapper">
-                            <h3 class="top-products__product-description_title">GL PEPTIDE PHYTO PEEL</h3>
+                            <h3 class="top-products__product-description_title mobile-hide">GL PEPTIDE PHYTO PEEL</h3>
                             <span class="top-products__product-description_subtitle">ALL SEASON TYPE | АНТИ-ЕЙДЖ</span>
                             <ul class="top-products__product-description_substances-list">
                                 <li>Glycolic Acid 30%</li>
@@ -342,6 +351,7 @@
                     </article>
                 </div>
                 <div class="top-products__product">
+                    <h3 class="top-products__product-description_title mobile-show">MANDELIC PHYTO PEEL</h3>
                     <div class="top-products__product-gallery" id="product-gallery_2">
                         <div class="top-products__product-gallery_navigation">
                             <div class="top-products__product-gallery_preview-wrapper">
@@ -402,7 +412,7 @@
 
                     <article class="top-products__product-description">
                         <div class="top-products__product-description-wrapper">
-                            <h3 class="top-products__product-description_title">MANDELIC PHYTO PEEL</h3>
+                            <h3 class="top-products__product-description_title mobile-hide">MANDELIC PHYTO PEEL</h3>
                             <span class="top-products__product-description_subtitle">ALL SEASON TYPE | АНТИ-ЕЙДЖ</span>
                             <ul class="top-products__product-description_substances-list">
                                 <li>MANDELIC ACID 50%</li>
@@ -603,7 +613,9 @@
                     </span>
                 </div>
                 <div class="about__info-wrapper">
-                    <img src="/images/founder.jpg" alt="Founder Portrait" class="about__photo">
+                    <div class="about__photo">
+                        <img src="/images/founder.jpg" alt="Founder Portrait">
+                    </div>
 
                     <div class="about__text-wrapper">
                         <div class="about__info-heading">
@@ -617,7 +629,8 @@
                             <h3>Про засновницю </h3>
                         </div>
                         <p class="about__info-paragraph">“Працюючи в індустрії краси вже понад 15 років топ-менеджером,
-                            створивши салон краси, відвідуючи безліч студій краси по всьому світу, беручи участь у
+                            створивши салон краси, при цьому відвідуючи безліч студій краси по всьому світу, беручи
+                            участь у
                             міжнародних виставках та фестивалях краси, мені завжди хотілося створити унікальний та
                             інноваційний продукт для обличчя і тіла у вигляді пілінгів”.</p>
 
@@ -905,39 +918,40 @@
         <section class="five-steps" id="five-steps__scroll-spy-js">
             <div class="fixed-container">
                 <h2 class="five-steps__heading second-heading">стань нашим партнером: 5 легких кроків</h2>
-
-                <div class="five-steps__animated-line">
-                    <span class="five-steps__animated-line_dot five-steps__animated-line_dot-1"></span>
-                    <span class="five-steps__animated-line_dot five-steps__animated-line_dot-2"></span>
-                    <span class="five-steps__animated-line_dot five-steps__animated-line_dot-3"></span>
-                    <span class="five-steps__animated-line_dot five-steps__animated-line_dot-4"></span>
-                    <span class="five-steps__animated-line_dot five-steps__animated-line_dot-5"></span>
-                </div>
-
-                <div class="five-steps__steps-wrapper">
-                    <div class="five-steps__step five-steps__step_show-1">
-                        <span class="five-steps__step_digit">01</span>
-                        <p class="five-steps__step_text">Заявка на партнерство</p>
+                <div class="five-steps__content-wrapper">
+                    <div class="five-steps__animated-line">
+                        <span class="five-steps__animated-line_dot five-steps__animated-line_dot-1"></span>
+                        <span class="five-steps__animated-line_dot five-steps__animated-line_dot-2"></span>
+                        <span class="five-steps__animated-line_dot five-steps__animated-line_dot-3"></span>
+                        <span class="five-steps__animated-line_dot five-steps__animated-line_dot-4"></span>
+                        <span class="five-steps__animated-line_dot five-steps__animated-line_dot-5"></span>
                     </div>
 
-                    <div class="five-steps__step five-steps__step_show-2">
-                        <span class="five-steps__step_digit">02</span>
-                        <p class="five-steps__step_text">Спілкування з менеджером</p>
-                    </div>
+                    <div class="five-steps__steps-wrapper">
+                        <div class="five-steps__step five-steps__step_show-1">
+                            <span class="five-steps__step_digit">01</span>
+                            <p class="five-steps__step_text">Заявка на партнерство</p>
+                        </div>
 
-                    <div class="five-steps__step five-steps__step_show-3">
-                        <span class="five-steps__step_digit">03</span>
-                        <p class="five-steps__step_text">Підписання договору</p>
-                    </div>
+                        <div class="five-steps__step five-steps__step_show-2">
+                            <span class="five-steps__step_digit">02</span>
+                            <p class="five-steps__step_text">Спілкування з менеджером</p>
+                        </div>
 
-                    <div class="five-steps__step five-steps__step_show-4">
-                        <span class="five-steps__step_digit">04</span>
-                        <p class="five-steps__step_text">Безкоштовне навчання</p>
-                    </div>
+                        <div class="five-steps__step five-steps__step_show-3">
+                            <span class="five-steps__step_digit">03</span>
+                            <p class="five-steps__step_text">Підписання договору</p>
+                        </div>
 
-                    <div class="five-steps__step five-steps__step_show-5">
-                        <span class="five-steps__step_digit">05</span>
-                        <p class="five-steps__step_text">Робота з ELA PIEL PRO</p>
+                        <div class="five-steps__step five-steps__step_show-4">
+                            <span class="five-steps__step_digit">04</span>
+                            <p class="five-steps__step_text">Безкоштовне навчання</p>
+                        </div>
+
+                        <div class="five-steps__step five-steps__step_show-5">
+                            <span class="five-steps__step_digit">05</span>
+                            <p class="five-steps__step_text">Робота з ELA PIEL PRO</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -947,41 +961,49 @@
     <footer class="footer">
         <div class="footer__contacts">
             <div class="footer__contacts-wrapper fixed-container">
-                <div class="footer__contacts-logo footer__contacts_item">
-                    <img src="/images/logo_white.svg" alt="Logo">
-                </div>
-                <div class="footer__contacts_item footer__contacts_item-content">
-                    <p class="footer__contacts_heading">КОНТАКТИ в україні</p>
-                    <p class="footer__contacts_text">Kyiv, Sof. Borshchagivka.</p>
-                    <p class="footer__contacts_text">St. Byshivska 1</p>
-                    <br>
-                    <p class="footer__contacts_text">Tel. + 3 8093 762 77 51</p>
-                    <p class="footer__contacts_text">E-mail: mail@elapielpro.com</p>
-                </div>
-                <div class="footer__contacts_item footer__contacts_item-content">
-                    <p class="footer__contacts_heading">КОНТАКТИ В ЄВРОПІ</p>
-                    <p class="footer__contacts_text">Poland, Warsaw</p>
-                    <p class="footer__contacts_text">Constancin-Jeziorna,</p>
-                    <p class="footer__contacts_text">Str Poprzeczna 16</p>
-                    <br>
-                    <p class="footer__contacts_text">Tel. +48 572 033 140</p>
-                    <p class="footer__contacts_text">E-mail: mail@elapielpro.com</p>
-                </div>
-                <div class="footer__contacts_item">
-                    <a href="#" target="_blank" rel="noopener noreferrer" class="footer__contacts_insta-link">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
-                            <path
-                                d="M18.602 26H7.39797C3.32826 26 0 22.6882 0 18.602V7.39797C0 3.32826 3.32826 0 7.39797 0H18.602C22.6882 0 26 3.32826 26 7.39797V18.602C26 22.6882 22.6882 26 18.602 26ZM7.39797 2.22433C4.54753 2.22433 2.22433 4.54753 2.22433 7.39797V18.602C2.22433 21.4525 4.54753 23.7757 7.39797 23.7757H18.602C21.4525 23.7757 23.7757 21.4525 23.7757 18.602V7.39797C23.7757 4.54753 21.4525 2.22433 18.602 2.22433H7.39797Z"
-                                fill="white" />
-                            <path
-                                d="M12.9983 19.6568C9.32405 19.6568 6.3418 16.6745 6.3418 13.0003C6.3418 9.32601 9.32405 6.34375 12.9983 6.34375C16.6726 6.34375 19.6549 9.32601 19.6549 13.0003C19.6549 16.6745 16.6726 19.6568 12.9983 19.6568ZM12.9983 8.56808C10.5598 8.56808 8.56613 10.5617 8.56613 13.0003C8.56613 15.4388 10.5598 17.4325 12.9983 17.4325C15.4369 17.4325 17.4305 15.4388 17.4305 13.0003C17.4305 10.5617 15.4369 8.56808 12.9983 8.56808Z"
-                                fill="white" />
-                            <path
-                                d="M21.5519 5.96346C21.5519 6.85319 20.8434 7.56169 19.9537 7.56169C19.064 7.56169 18.3555 6.85319 18.3555 5.96346C18.3555 5.07373 19.064 4.36523 19.9537 4.36523C20.827 4.36523 21.5519 5.07373 21.5519 5.96346Z"
-                                fill="white" />
-                        </svg>
-                    </a>
-                </div>
+
+    
+                    <div class="footer__contacts-logo footer__contacts_item">
+                        <img src="/images/logo_white.svg" alt="Logo">
+                    </div>
+
+                    <div class="footer__contacts_item footer__contacts_item-content">
+                        <p class="footer__contacts_heading">КОНТАКТИ в україні</p>
+                        <p class="footer__contacts_text">Київ, Соф.Борщагівка.</p>
+                        <p class="footer__contacts_text">вул. Бишівська 1 </p>
+                        <br>
+                        <p class="footer__contacts_text">Tel. + 3 8093 762 77 51</p>
+                        <p class="footer__contacts_text">E-mail: mail@elapielpro.com</p>
+                    </div>
+
+                    <div class="footer__contacts_item footer__contacts_item-content">
+                        <p class="footer__contacts_heading">КОНТАКТИ В ЄВРОПІ</p>
+                        <p class="footer__contacts_text">Poland, Warsaw</p>
+                        <p class="footer__contacts_text">Constancin-Jeziorna,</p>
+                        <p class="footer__contacts_text">Str Poprzeczna 16</p>
+                        <br>
+                        <p class="footer__contacts_text">Tel. +48 572 033 140</p>
+                        <p class="footer__contacts_text">E-mail: mail@elapielpro.com</p>
+                    </div>
+
+                    <div class="footer__contacts_item">
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="footer__contacts_insta-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26"
+                                fill="none">
+                                <path
+                                    d="M18.602 26H7.39797C3.32826 26 0 22.6882 0 18.602V7.39797C0 3.32826 3.32826 0 7.39797 0H18.602C22.6882 0 26 3.32826 26 7.39797V18.602C26 22.6882 22.6882 26 18.602 26ZM7.39797 2.22433C4.54753 2.22433 2.22433 4.54753 2.22433 7.39797V18.602C2.22433 21.4525 4.54753 23.7757 7.39797 23.7757H18.602C21.4525 23.7757 23.7757 21.4525 23.7757 18.602V7.39797C23.7757 4.54753 21.4525 2.22433 18.602 2.22433H7.39797Z"
+                                    fill="white" />
+                                <path
+                                    d="M12.9983 19.6568C9.32405 19.6568 6.3418 16.6745 6.3418 13.0003C6.3418 9.32601 9.32405 6.34375 12.9983 6.34375C16.6726 6.34375 19.6549 9.32601 19.6549 13.0003C19.6549 16.6745 16.6726 19.6568 12.9983 19.6568ZM12.9983 8.56808C10.5598 8.56808 8.56613 10.5617 8.56613 13.0003C8.56613 15.4388 10.5598 17.4325 12.9983 17.4325C15.4369 17.4325 17.4305 15.4388 17.4305 13.0003C17.4305 10.5617 15.4369 8.56808 12.9983 8.56808Z"
+                                    fill="white" />
+                                <path
+                                    d="M21.5519 5.96346C21.5519 6.85319 20.8434 7.56169 19.9537 7.56169C19.064 7.56169 18.3555 6.85319 18.3555 5.96346C18.3555 5.07373 19.064 4.36523 19.9537 4.36523C20.827 4.36523 21.5519 5.07373 21.5519 5.96346Z"
+                                    fill="white" />
+                            </svg>
+                        </a>
+                    </div>
+             
+
             </div>
         </div>
         <div class="footer__copyright">

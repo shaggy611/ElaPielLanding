@@ -73,3 +73,51 @@ a {
     margin-right: 5px;
   }
 }
+
+.mobile-show {
+  display: none;
+}
+
+@include mobile {
+  .fixed-container {
+    padding: 0 24px;
+    max-width: 767px;
+    box-sizing: border-box;
+  }
+
+  .small-bage {
+    font-size: 14px;
+    padding: 5px 15px;
+    max-height: 27px;
+
+    & img {
+      width: 17px;
+    }
+  }
+
+  .second-heading {
+    font-size: 20px;
+  }
+
+  .mobile-hide {
+    display: none;
+  }
+
+  .mobile-show {
+    display: block;
+  }
+
+  .basic-button {
+    max-width: 272px;
+    padding: 25px 16px;
+    font-size: 16px;
+  }
+}
+
+@include tablet {
+  .fixed-container {
+    padding: 0 24px;
+    max-width: 710px;
+    box-sizing: border-box;
+  }
+}

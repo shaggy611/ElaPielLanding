@@ -69,4 +69,45 @@ a {
 }
 .small-bage img {
   margin-right: 5px;
+}
+
+.mobile-show {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .fixed-container {
+    padding: 0 24px;
+    max-width: 767px;
+    box-sizing: border-box;
+  }
+  .small-bage {
+    font-size: 14px;
+    padding: 5px 15px;
+    max-height: 27px;
+  }
+  .small-bage img {
+    width: 17px;
+  }
+  .second-heading {
+    font-size: 20px;
+  }
+  .mobile-hide {
+    display: none;
+  }
+  .mobile-show {
+    display: block;
+  }
+  .basic-button {
+    max-width: 272px;
+    padding: 25px 16px;
+    font-size: 16px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1217px) {
+  .fixed-container {
+    padding: 0 24px;
+    max-width: 710px;
+    box-sizing: border-box;
+  }
 }/*# sourceMappingURL=common_styles.css.map */

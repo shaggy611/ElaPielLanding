@@ -38,7 +38,7 @@ window.addEventListener("scroll", function (e) {
     scrollPosition = window.scrollY
     targetPosition = fiveStepsSection.offsetTop
 
-    if (scrollPosition >= (targetPosition - 150)) {
+    if (scrollPosition >= (targetPosition - 350)) {
         fiveStepsSection.classList.add('activate-animation')
     }
 })
