@@ -143,6 +143,11 @@ a {
   -ms-border-radius: 170px;
   -o-border-radius: 170px;
 }
+.navigation__language-changer_ua.active, .navigation__language-changer_eng.active {
+  border: 1px solid #fff;
+  color: #fff;
+  background-color: #1f4b98;
+}
 
 .welcome-screen {
   max-height: 642px;
