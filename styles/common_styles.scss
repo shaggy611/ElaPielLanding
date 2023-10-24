@@ -74,7 +74,8 @@ a {
   }
 }
 
-.mobile-show {
+.mobile-show,
+.tablet-show {
   display: none;
 }
 
@@ -116,8 +117,32 @@ a {
 
 @include tablet {
   .fixed-container {
-    padding: 0 24px;
+    // padding: 0 24px;
+    padding: 0;
     max-width: 710px;
     box-sizing: border-box;
+  }
+
+  .small-bage {
+    font-size: 18px;
+    padding: 5px 15px;
+    max-height: 32px;
+
+    & img {
+      width: 17px;
+    }
+  }
+
+  .second-heading {
+    font-size: 30px;
+    letter-spacing: 1.5px;
+  }
+
+  .tablet-hide {
+    display: none;
+  }
+
+  .tablet-show {
+    display: block;
   }
 }
