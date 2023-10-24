@@ -36,19 +36,39 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     })
 
+    const fiveStepsSection = document.querySelector('.five-steps__scroll-spy-js')
+    let scrollPosition
+    let targetPosition
+
+    if (fiveStepsSection) {
+        window.addEventListener("scroll", function (e) {
+            scrollPosition = window.scrollY
+            targetPosition = fiveStepsSection.offsetTop
+
+            if (scrollPosition >= (targetPosition - 350)) {
+                fiveStepsSection.classList.add('activate-animation')
+            }
+        })
+    }
+
+    let slider = document.querySelector('.welcome-screen')
+
+    function mainScreenSlider() {
+        let firstSliderChild = slider.firstElementChild
+        let clone = firstSliderChild.cloneNode(true)
+
+        slider.appendChild(clone)
+        slider.classList.add('welcome-screen__slider-scroll-left')
+
+        setTimeout(() => {
+            firstSliderChild.remove()
+            slider.classList.remove('welcome-screen__slider-scroll-left')
+        }, 2000)
+    }
+
+    if (slider) {
+        let interval = setInterval(mainScreenSlider, 4700)
+    }
+
+
 })
-
-const fiveStepsSection = document.querySelector('.five-steps__scroll-spy-js')
-let scrollPosition
-let targetPosition
-
-if (fiveStepsSection) {
-    window.addEventListener("scroll", function (e) {
-        scrollPosition = window.scrollY
-        targetPosition = fiveStepsSection.offsetTop
-
-        if (scrollPosition >= (targetPosition - 350)) {
-            fiveStepsSection.classList.add('activate-animation')
-        }
-    })
-}
