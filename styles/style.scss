@@ -3234,6 +3234,7 @@
   // background-position: 80% 1%;
   background-position: 85% 154px;
   background-attachment: fixed;
+  position: relative;
 
   & ul {
     list-style: lower-latin;
@@ -3297,6 +3298,18 @@
     font-style: normal;
     font-weight: 300;
     line-height: 20px;
+  }
+
+  @include mobile {
+    &__text-wrapper {
+      max-width: 375px;
+    }
+  }
+
+  @include tablet {
+    &__text-wrapper {
+      max-width: 700px !important;
+    }
   }
 }
 // + Policy-Offer

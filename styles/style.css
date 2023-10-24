@@ -3,6 +3,10 @@ body {
   overflow-x: hidden;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   font-size: 16px;
 }
@@ -2849,6 +2853,7 @@ a {
   background-repeat: no-repeat;
   background-position: 85% 154px;
   background-attachment: fixed;
+  position: relative;
 }
 .policy-offer ul {
   list-style: lower-latin;
@@ -2900,6 +2905,16 @@ a {
   font-style: normal;
   font-weight: 300;
   line-height: 20px;
+}
+@media (max-width: 767px) {
+  .policy-offer__text-wrapper {
+    max-width: 375px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1217px) {
+  .policy-offer__text-wrapper {
+    max-width: 700px !important;
+  }
 }
 
 .mobile-menu {

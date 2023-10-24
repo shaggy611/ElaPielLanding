@@ -42,11 +42,13 @@ const fiveStepsSection = document.querySelector('.five-steps__scroll-spy-js')
 let scrollPosition
 let targetPosition
 
-window.addEventListener("scroll", function (e) {
-    scrollPosition = window.scrollY
-    targetPosition = fiveStepsSection.offsetTop
+if (fiveStepsSection) {
+    window.addEventListener("scroll", function (e) {
+        scrollPosition = window.scrollY
+        targetPosition = fiveStepsSection.offsetTop
 
-    if (scrollPosition >= (targetPosition - 350)) {
-        fiveStepsSection.classList.add('activate-animation')
-    }
-})
+        if (scrollPosition >= (targetPosition - 350)) {
+            fiveStepsSection.classList.add('activate-animation')
+        }
+    })
+}

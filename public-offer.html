@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1">
     <title>Ela Piele Pro</title>
 </head>
 
@@ -21,7 +21,7 @@
                 </div>
                 <div class="alert-contact__contacts">
                     <p>Офіційний представник в Україні: +38 093 762 77 51</p>
-                    <a href="#">
+                    <a href="https://instagram.com/elapiel.pro">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                             <path
                                 d="M14.3093 20H5.69075C2.5602 20 0 17.4525 0 14.3093V5.69075C0 2.5602 2.5602 0 5.69075 0H14.3093C17.4525 0 20 2.5602 20 5.69075V14.3093C20 17.4525 17.4525 20 14.3093 20ZM5.69075 1.71103C3.4981 1.71103 1.71103 3.4981 1.71103 5.69075V14.3093C1.71103 16.5019 3.4981 18.289 5.69075 18.289H14.3093C16.5019 18.289 18.289 16.5019 18.289 14.3093V5.69075C18.289 3.4981 16.5019 1.71103 14.3093 1.71103H5.69075Z"
@@ -40,24 +40,84 @@
 
         <nav class="navigation fixed-container">
             <div class="navigation__logo">
-                <img src="/images/logo.svg" alt="Logo">
+                <a href="/" rel="noopener noreferrer">
+                    <img src="/images/logo.svg" alt="Logo">
+                </a>
             </div>
 
             <ul class="navigation__wrapper">
-                <li class="navigation__item"><a href="#">Продукція</a></li>
-                <li class="navigation__item"><a href="#">Як купити</a></li>
-                <li class="navigation__item"><a href="#">Про бренд</a></li>
-                <li class="navigation__item"><a href="#">Стати партнером</a></li>
-                <li class="navigation__item"><a href="#">Контакти</a></li>
+                <li class="navigation__item"><a href="/#top-products">Продукція</a></li>
+                <li class="navigation__item"><a href="/#five-steps">Як купити</a></li>
+                <li class="navigation__item"><a href="/#about">Про бренд</a></li>
+                <li class="navigation__item"><a href="/#partnership">Стати партнером</a></li>
+                <li class="navigation__item"><a href="/#contacts">Контакти</a></li>
                 <li class="navigation__language-changer">
-                    <a class="navigation__language-changer_ua" href="#">UA</a>
+                    <a class="navigation__language-changer_ua active" href="#">UA</a>
                     <a class="navigation__language-changer_eng" href="#">ENG</a>
                 </li>
             </ul>
+
+            <div class="navigation__menu-toggler">
+                <input type="checkbox" name="show-menu" id="show-mobile-menu">
+                <label for="show-mobile-menu">
+                    <svg id="mobile-menu-show-btn" xmlns="http://www.w3.org/2000/svg" width="13" height="10"
+                        viewBox="0 0 13 10" fill="none">
+                        <rect width="13" height="2" rx="1" fill="#1F4B98" />
+                        <rect y="4" width="13" height="2" rx="1" fill="#1F4B98" />
+                        <rect x="3" y="8" width="10" height="2" rx="1" fill="#1F4B98" />
+                    </svg>
+
+                    <svg id="mobile-menu-hide-btn" xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                        viewBox="0 0 12 12" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M10.7882 10.5961C10.3976 10.9866 9.76448 10.9866 9.37395 10.5961L1.59578 2.81795C1.20525 2.42742 1.20525 1.79426 1.59578 1.40373C1.9863 1.01321 2.61947 1.01321 3.00999 1.40373L10.7882 9.18191C11.1787 9.57243 11.1787 10.2056 10.7882 10.5961Z"
+                            fill="#1F4B98" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M1.59675 10.5963C1.20622 10.2057 1.20622 9.57258 1.59675 9.18206L9.37492 1.40388C9.76545 1.01336 10.3986 1.01336 10.7891 1.40388C11.1797 1.79441 11.1797 2.42757 10.7891 2.8181L3.01096 10.5963C2.62044 10.9868 1.98727 10.9868 1.59675 10.5963Z"
+                            fill="#1F4B98" />
+                    </svg>
+                </label>
+
+                <div class="mobile-menu" id="mobile-menu-roller-js">
+                    <ul class="mobile-menu__wrapper">
+                        <li class="mobile-menu__item"><a class="mobile-menu__item_link"
+                                href="/#top-products">Продукція</a></li>
+                        <li class="mobile-menu__item"><a class="mobile-menu__item_link" href="/#five-steps">Як
+                                купити</a>
+                        </li>
+                        <li class="mobile-menu__item"><a class="mobile-menu__item_link" href="/#about">Про бренд</a>
+                        </li>
+                        <li class="mobile-menu__item"><a class="mobile-menu__item_link" href="/#partnership">Стати
+                                партнером</a></li>
+                        <li class="mobile-menu__item"><a class="mobile-menu__item_link" href="/#contacts">Контакти</a>
+                        </li>
+                    </ul>
+
+                    <a class="mobile-menu__instagram-link" href="https://instagram.com/elapiel.pro" target="_blank"
+                        rel="noopener noreferrer">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                            <path
+                                d="M8.58555 12H3.41445C1.53612 12 0 10.4715 0 8.58555V3.41445C0 1.53612 1.53612 0 3.41445 0H8.58555C10.4715 0 12 1.53612 12 3.41445V8.58555C12 10.4715 10.4715 12 8.58555 12ZM3.41445 1.02662C2.09886 1.02662 1.02662 2.09886 1.02662 3.41445V8.58555C1.02662 9.90114 2.09886 10.9734 3.41445 10.9734H8.58555C9.90114 10.9734 10.9734 9.90114 10.9734 8.58555V3.41445C10.9734 2.09886 9.90114 1.02662 8.58555 1.02662H3.41445Z"
+                                fill="#1F4B98" />
+                            <path
+                                d="M5.99998 9.07198C4.30416 9.07198 2.92773 7.69555 2.92773 5.99973C2.92773 4.30392 4.30416 2.92749 5.99998 2.92749C7.6958 2.92749 9.07222 4.30392 9.07222 5.99973C9.07222 7.69555 7.6958 9.07198 5.99998 9.07198ZM5.99998 3.95411C4.8745 3.95411 3.95435 4.87426 3.95435 5.99973C3.95435 7.12521 4.8745 8.04536 5.99998 8.04536C7.12545 8.04536 8.04561 7.12521 8.04561 5.99973C8.04561 4.87426 7.12545 3.95411 5.99998 3.95411Z"
+                                fill="#1F4B98" />
+                            <path
+                                d="M9.94794 2.75278C9.94794 3.16343 9.62094 3.49042 9.2103 3.49042C8.79965 3.49042 8.47266 3.16343 8.47266 2.75278C8.47266 2.34213 8.79965 2.01514 9.2103 2.01514C9.61334 2.01514 9.94794 2.34213 9.94794 2.75278Z"
+                                fill="#1F4B98" />
+                        </svg>
+                    </a>
+
+                    <div class="mobile-menu__language-changer">
+                        <a class="mobile-menu__language-changer_ua active" href="#">UA</a>
+                        <a class="mobile-menu__language-changer_eng" href="#">ENG</a>
+                    </div>
+
+                    <p class="mobile-menu__text">Офіційний представник в Україні: +38 093 762 77 51</p>
+                </div>
+            </div>
         </nav>
     </header>
-
-
 
     <section class="policy-offer">
         <div class="policy-offer__text-wrapper fixed-container">
@@ -258,23 +318,24 @@
         </div>
     </section>
 
-
-
-
     <footer class="footer">
-        <div class="footer__contacts">
+        <div id="contacts" class="footer__contacts">
             <div class="footer__contacts-wrapper fixed-container">
+
+
                 <div class="footer__contacts-logo footer__contacts_item">
                     <img src="/images/logo_white.svg" alt="Logo">
                 </div>
+
                 <div class="footer__contacts_item footer__contacts_item-content">
                     <p class="footer__contacts_heading">КОНТАКТИ в україні</p>
-                    <p class="footer__contacts_text">Kyiv, Sof. Borshchagivka.</p>
-                    <p class="footer__contacts_text">St. Byshivska 1</p>
+                    <p class="footer__contacts_text">Київ, Соф.Борщагівка.</p>
+                    <p class="footer__contacts_text">вул. Бишівська 1 </p>
                     <br>
                     <p class="footer__contacts_text">Tel. + 3 8093 762 77 51</p>
                     <p class="footer__contacts_text">E-mail: mail@elapielpro.com</p>
                 </div>
+
                 <div class="footer__contacts_item footer__contacts_item-content">
                     <p class="footer__contacts_heading">КОНТАКТИ В ЄВРОПІ</p>
                     <p class="footer__contacts_text">Poland, Warsaw</p>
@@ -284,8 +345,10 @@
                     <p class="footer__contacts_text">Tel. +48 572 033 140</p>
                     <p class="footer__contacts_text">E-mail: mail@elapielpro.com</p>
                 </div>
+
                 <div class="footer__contacts_item">
-                    <a href="#" target="_blank" rel="noopener noreferrer" class="footer__contacts_insta-link">
+                    <a href="https://instagram.com/elapiel.pro" target="_blank" rel="noopener noreferrer"
+                        class="footer__contacts_insta-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
                             <path
                                 d="M18.602 26H7.39797C3.32826 26 0 22.6882 0 18.602V7.39797C0 3.32826 3.32826 0 7.39797 0H18.602C22.6882 0 26 3.32826 26 7.39797V18.602C26 22.6882 22.6882 26 18.602 26ZM7.39797 2.22433C4.54753 2.22433 2.22433 4.54753 2.22433 7.39797V18.602C2.22433 21.4525 4.54753 23.7757 7.39797 23.7757H18.602C21.4525 23.7757 23.7757 21.4525 23.7757 18.602V7.39797C23.7757 4.54753 21.4525 2.22433 18.602 2.22433H7.39797Z"
@@ -299,6 +362,8 @@
                         </svg>
                     </a>
                 </div>
+
+
             </div>
         </div>
         <div class="footer__copyright">
@@ -310,7 +375,7 @@
                 </div>
                 <div class="footer__copyright-wrapper">
                     <p class="footer__copyright-text">© Copyright 2023 | ELA PIEL PRO | Усі права захищені</p>
-                    <p class="footer__copyright-madeby">Made by Pererva.pro</p>
+                    <p class="footer__copyright-madeby"></p>
                 </div>
             </div>
         </div>
