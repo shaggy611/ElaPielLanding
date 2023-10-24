@@ -1,5 +1,6 @@
 body {
   font-family: "Exo 2";
+  overflow-x: hidden;
 }
 
 :root {
@@ -288,7 +289,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 999;
+  z-index: 899;
   position: relative;
 }
 .welcome-screen__video-bg video {
@@ -2899,4 +2900,124 @@ a {
   font-style: normal;
   font-weight: 300;
   line-height: 20px;
+}
+
+.mobile-menu {
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  position: absolute;
+  right: -100vw;
+  top: 75px;
+  z-index: 999;
+  flex-direction: column;
+  align-items: center;
+  display: none;
+  overflow: hidden !important;
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  -webkit-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  -moz-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  -ms-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  -o-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.mobile-menu__wrapper {
+  list-style: none;
+  margin-top: 117px;
+}
+.mobile-menu__item {
+  margin-bottom: 20px;
+  display: flex;
+}
+.mobile-menu__item::before {
+  display: block;
+  height: 14px;
+  margin-right: 8px;
+  content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" viewBox="0 0 15 14" fill="none"><path d="M5.66277 3.67325C5.65833 3.58453 5.64946 3.50024 5.64946 3.41152C5.65389 2.5598 5.70269 1.71695 6.03539 0.914023C6.1463 0.64786 6.28825 0.403877 6.50562 0.213126C6.84719 -0.0796533 7.22869 -0.0707812 7.55696 0.239743C7.79207 0.461546 7.93403 0.736581 8.04936 1.0338C8.24011 1.53507 8.33327 2.05853 8.35545 2.59085C8.3732 2.95017 8.35989 3.31393 8.35989 3.67325C8.3732 3.67769 8.3865 3.68212 8.39981 3.68656C8.43086 3.65551 8.46635 3.62445 8.49741 3.5934C9.02973 3.03889 9.59755 2.52875 10.2807 2.16499C10.6267 1.97868 10.9905 1.83672 11.3941 1.83672C11.8688 1.83672 12.1616 2.12507 12.1793 2.59529C12.1926 2.91912 12.0995 3.22077 11.9664 3.51355C11.6825 4.1346 11.2611 4.66249 10.7953 5.15489C10.6445 5.31016 10.4936 5.46542 10.3295 5.63399C10.3739 5.63842 10.4093 5.63842 10.4448 5.63842C10.7376 5.63842 11.0304 5.62955 11.3187 5.6473C11.8599 5.67391 12.3923 5.75376 12.9024 5.9312C13.1686 6.02436 13.4214 6.14413 13.6432 6.32158C13.8384 6.48128 13.9981 6.67203 14.0203 6.93819C14.0469 7.22653 13.905 7.4439 13.7009 7.62134C13.3815 7.90525 12.9911 8.05164 12.583 8.1581C11.9575 8.32224 11.3187 8.3666 10.6711 8.36216C10.5602 8.36216 10.4537 8.36216 10.3073 8.36216C10.3694 8.41983 10.4093 8.45976 10.4493 8.49524C10.9905 9.01426 11.4873 9.56877 11.8466 10.2342C12.0551 10.6157 12.2104 11.0149 12.1793 11.4674C12.1527 11.8533 11.8866 12.1284 11.5006 12.155C11.0304 12.1905 10.6178 12.0219 10.2186 11.8001C9.55762 11.4364 9.00312 10.9351 8.48853 10.3939C8.46192 10.3673 8.43974 10.3406 8.39094 10.2918C8.3865 10.3495 8.3865 10.385 8.38207 10.4249C8.35989 10.904 8.35989 11.3831 8.31109 11.8622C8.25786 12.3901 8.13365 12.9091 7.85418 13.3749C7.76102 13.5302 7.64125 13.681 7.50816 13.8008C7.1932 14.0758 6.82058 14.0625 6.50562 13.783C6.26607 13.5701 6.11524 13.2951 5.99991 12.9978C5.81803 12.5321 5.72043 12.0441 5.68938 11.5428C5.6672 11.1658 5.6672 10.7843 5.65833 10.4027C5.65833 10.3761 5.65389 10.3451 5.64946 10.2918C5.6051 10.3362 5.57404 10.3673 5.54299 10.3939C5.04615 10.9129 4.51383 11.392 3.88834 11.7557C3.52902 11.9642 3.15196 12.1328 2.7261 12.155C2.63294 12.1594 2.53091 12.1594 2.43775 12.1372C2.06956 12.0618 1.85219 11.7912 1.84332 11.4009C1.83445 11.0238 1.95422 10.6822 2.11836 10.354C2.38008 9.8305 2.73497 9.37358 3.12978 8.94772C3.28504 8.77915 3.44917 8.61945 3.61331 8.45976C3.63992 8.43314 3.67541 8.42427 3.70646 8.40209C3.69759 8.38878 3.68872 8.37103 3.67985 8.35773C3.62662 8.35773 3.57338 8.35773 3.52015 8.35773C2.85474 8.37103 2.18933 8.33998 1.54167 8.18028C1.13799 8.08269 0.747614 7.94517 0.41491 7.68788C0.326189 7.61691 0.241904 7.53706 0.170927 7.44834C-0.0641842 7.14225 -0.0553121 6.81398 0.188671 6.51676C0.432654 6.21511 0.769794 6.05541 1.12468 5.9312C1.63926 5.74933 2.17602 5.66948 2.72166 5.64286C3.01 5.62955 3.29835 5.63842 3.58669 5.63399C3.61774 5.63399 3.6488 5.62955 3.7109 5.62955C3.66654 5.58519 3.64436 5.55858 3.61774 5.53196C3.09872 5.03512 2.61963 4.50279 2.25144 3.88175C2.05625 3.54461 1.90099 3.18972 1.85219 2.79935C1.79896 2.36018 1.94979 1.9565 2.4067 1.86778C2.58414 1.83229 2.77489 1.83672 2.95233 1.87221C3.48466 1.96981 3.93714 2.24484 4.36744 2.55536C4.7933 2.86145 5.1748 3.21634 5.52968 3.5934C5.56074 3.62445 5.58292 3.66438 5.6051 3.69987C5.63171 3.691 5.64502 3.68212 5.66277 3.67325Z" fill="%231F4B98"/></svg>');
+}
+.mobile-menu__item a {
+  color: #1f4b98;
+  font-family: "Exo 2";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+}
+.mobile-menu__language-changer {
+  display: flex;
+  margin-top: 17px;
+  margin-bottom: 15px;
+}
+.mobile-menu__language-changer_ua, .mobile-menu__language-changer_eng {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 38px;
+  height: 38px;
+  padding: 6px;
+  border-radius: 170px;
+  border: 1px solid #1f4b98;
+  color: #1f4b98;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 22px;
+  text-align: center;
+  -webkit-border-radius: 170px;
+  -moz-border-radius: 170px;
+  -ms-border-radius: 170px;
+  -o-border-radius: 170px;
+}
+.mobile-menu__language-changer_ua.active, .mobile-menu__language-changer_eng.active {
+  border: 1px solid #fff;
+  color: #fff;
+  background-color: #1f4b98;
+}
+.mobile-menu__text {
+  color: #1f4b98;
+  text-align: center;
+  font-family: "Exo 2";
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+@media (max-width: 767px) {
+  .mobile-menu {
+    display: flex;
+  }
+}
+@media (max-height: 592px) {
+  .mobile-menu {
+    padding-bottom: 30px;
+    overflow: scroll;
+  }
+  .mobile-menu__wrapper {
+    list-style: none;
+    margin-top: 0px;
+    margin-bottom: 0;
+  }
+}
+
+#show-mobile-menu,
+#close-mobile-menu {
+  display: none;
+}
+
+#show-mobile-menu:checked ~ .mobile-menu {
+  right: 0vw !important;
+}
+
+#show-mobile-menu ~ label #mobile-menu-hide-btn {
+  display: none;
+}
+
+#show-mobile-menu:checked ~ label #mobile-menu-hide-btn {
+  display: block;
+}
+
+#show-mobile-menu:checked ~ label #mobile-menu-show-btn {
+  display: none;
+}
+
+#show-mobile-menu:checked ~ .mobile-menu {
+  right: 0vw !important;
 }/*# sourceMappingURL=style.css.map */

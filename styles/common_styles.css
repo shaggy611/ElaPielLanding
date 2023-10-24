@@ -1,5 +1,10 @@
 body {
   font-family: "Exo 2";
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 :root {

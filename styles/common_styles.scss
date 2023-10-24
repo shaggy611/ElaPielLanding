@@ -2,7 +2,11 @@
 
 body {
   font-family: 'Exo 2';
-  //font-family: 'Cinzel', serif;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 :root {
