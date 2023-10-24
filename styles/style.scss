@@ -228,6 +228,7 @@
     min-width: 100%;
     width: 100vw;
     max-width: 100%;
+    position: relative;
   }
 
   &__slide-2 {
@@ -415,13 +416,22 @@
   }
 
   &__video-bg {
+    overflow: hidden;
+    max-height: 600px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+
     & video {
       object-fit: cover;
       overflow: hidden;
       max-height: 600px;
-      position: absolute;
-      top: 0;
-      left: 0;
+      // position: absolute;
+      // top: 0;
+      // left: 0;
       height: 100%;
       width: 100%;
       z-index: -1;

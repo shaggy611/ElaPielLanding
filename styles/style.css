@@ -320,6 +320,7 @@ a {
   min-width: 100%;
   width: 100vw;
   max-width: 100%;
+  position: relative;
 }
 .welcome-screen__slide-2 {
   background-color: #1f4b98;
@@ -473,14 +474,21 @@ a {
   position: relative;
   max-height: 600px;
 }
-.welcome-screen__video-bg video {
-  -o-object-fit: cover;
-     object-fit: cover;
+.welcome-screen__video-bg {
   overflow: hidden;
   max-height: 600px;
   position: absolute;
   top: 0;
   left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+.welcome-screen__video-bg video {
+  -o-object-fit: cover;
+     object-fit: cover;
+  overflow: hidden;
+  max-height: 600px;
   height: 100%;
   width: 100%;
   z-index: -1;

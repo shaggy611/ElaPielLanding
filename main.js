@@ -12,6 +12,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const productGallery_2 = document.querySelector('#product-gallery_2')
     const menuToggler = document.querySelector('#show-mobile-menu')
     const mobileMenu = document.querySelector('#mobile-menu-roller-js')
+    let slider = document.querySelector('.welcome-screen')
+    const video = document.querySelector('#video_bg');
+
+    const options = {
+        root: slider, // viewport
+        rootMargin: '0px',
+        threshold: 0.2 // якщо 50% елементу видно
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                video.play(); // Відтворити відео, коли воно видно
+                observer.unobserve(entry.target); // Припинити спостереження
+            }
+        });
+    }, options);
 
     if (productGallery_1) {
         const gallery_1 = new Gallery('#product-gallery_1').initialize()
@@ -51,14 +68,13 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     }
 
-    let slider = document.querySelector('.welcome-screen')
-
     function mainScreenSlider() {
         let firstSliderChild = slider.firstElementChild
         let clone = firstSliderChild.cloneNode(true)
 
         slider.appendChild(clone)
         slider.classList.add('welcome-screen__slider-scroll-left')
+        observer.observe(video);
 
         setTimeout(() => {
             firstSliderChild.remove()
@@ -66,9 +82,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 2000)
     }
 
+
+
     if (slider) {
-        let interval = setInterval(mainScreenSlider, 4700)
+        observer.observe(video);
+        let interval = setInterval(mainScreenSlider, 5000)
     }
-
-
 })
