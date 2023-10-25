@@ -14,6 +14,10 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.scrollTop = 1;
     }
 
+    setTimeout(function () {
+        document.documentElement.style.scrollBehavior = "smooth";
+    }, 2000)
+
     const productGallery_1 = document.querySelector('#product-gallery_1')
     const productGallery_2 = document.querySelector('#product-gallery_2')
     const menuToggler = document.querySelector('#show-mobile-menu')
