@@ -437,15 +437,4 @@ a {
     -ms-transform: translate(-50%, -45%);
     -o-transform: translate(-50%, -45%);
   }
-}
-@media (orientation: landscape) {
-  .modal-screen__modal {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -40%);
-    -webkit-transform: translate(-50%, -40%);
-    -moz-transform: translate(-50%, -40%);
-    -ms-transform: translate(-50%, -40%);
-    -o-transform: translate(-50%, -40%);
-  }
 }/*# sourceMappingURL=common_styles.css.map */

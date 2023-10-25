@@ -499,15 +499,15 @@ a {
     }
   }
 
-  @media (orientation: landscape) {
-    &__modal {
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -40%);
-      -webkit-transform: translate(-50%, -40%);
-      -moz-transform: translate(-50%, -40%);
-      -ms-transform: translate(-50%, -40%);
-      -o-transform: translate(-50%, -40%);
-    }
-  }
+  // @media (orientation: landscape) {
+  //   &__modal {
+  //     top: 50%;
+  //     left: 50%;
+  //     transform: translate(-50%, -40%);
+  //     -webkit-transform: translate(-50%, -40%);
+  //     -moz-transform: translate(-50%, -40%);
+  //     -ms-transform: translate(-50%, -40%);
+  //     -o-transform: translate(-50%, -40%);
+  //   }
+  // }
 }
