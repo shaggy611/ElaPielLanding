@@ -24,6 +24,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileMenu = document.querySelector('#mobile-menu-roller-js')
     let slider = document.querySelector('.welcome-screen')
     const video = document.querySelector('#video_bg');
+    const modalDopDownList = document.querySelector('.modal-screen__input-activity')
+    const modalDopDownListTitle = document.querySelector('.modal-screen__input-activity-heading')
+    const closeModal = document.querySelector('.modal-screen__button-close')
+    const modalScreen = document.querySelector('.modal-screen')
+    const modal = document.querySelector('.modal-screen__modal')
+    const openModalButton = document.querySelectorAll('.open-modal-js')
+    const formData = document.querySelector('#pop-up-form-js')
+    const inputSubmition = document.querySelector('#modal-screen__input-submitiom')
+    const fileInputCheck = document.querySelector('#modal-screen__input-file')
+    const modalAlert = document.querySelector('.modal-screen__modal-alert')
+    const activityCheckBoxes = document.querySelectorAll('.modal-screen__input-activity_checkbox')
 
     const options = {
         root: slider, // viewport
@@ -47,6 +58,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (productGallery_2) {
         const gallery_2 = new Gallery('#product-gallery_2').initialize()
     }
+
+    inputSubmition.addEventListener('click', function () {
+        if (inputSubmition.checked) {
+            fileInputCheck.disabled = false
+        }
+    })
 
     menuToggler.addEventListener('click', function () {
         if (menuToggler.checked) {
@@ -90,6 +107,8 @@ document.addEventListener('DOMContentLoaded', () => {
             firstSliderChild.remove()
             slider.classList.remove('welcome-screen__slider-scroll-left')
         }, 2000)
+
+        addLIstenersforModalButton()
     }
 
 
@@ -98,4 +117,113 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(video);
         let interval = setInterval(mainScreenSlider, 5000)
     }
+
+    if (modal) {
+        modalDopDownList.addEventListener('click', function () {
+            modalDopDownList.classList.toggle('modal-screen__input-activity--opened')
+        })
+
+        closeModal.addEventListener('click', closeModalPopUp)
+        modalScreen.addEventListener('click', closeModalPopUp)
+        addLIstenersforModalButton()
+
+        activityCheckBoxes.forEach(item => {
+
+            item.addEventListener('click', function (event) {
+
+                let choosenParameter = event.target.parentNode.cloneNode(true)
+                event.target.parentNode.remove()
+                modalDopDownList.insertAdjacentElement('afterbegin', choosenParameter)
+                modalDopDownList.classList.toggle('modal-screen__input-activity--opened')
+                modalDopDownListTitle.style.display = 'none'
+
+                activityCheckBoxes.forEach(function (otherRadioButton) {
+                    console.log('check')
+                    if (otherRadioButton !== item) {
+                        otherRadioButton.checked = false;
+                    }
+                });
+            })
+        })
+    }
+
+    function addLIstenersforModalButton() {
+        openModalButton.forEach(btn => {
+            btn.addEventListener('click', function () {
+                modalScreen.style.display = 'block'
+                modal.style.display = 'block'
+                document.body.style.setProperty('overflow', 'hidden')
+            })
+        })
+    }
+
+    function closeModalPopUp(event) {
+        if (event.target.classList.contains('modal-screen__button-close-svg') || event.target.classList.contains('modal-screen') || event.target.classList.contains('pop-up-form-js')) {
+            modalScreen.style.display = 'none'
+            modal.style.display = 'none'
+            document.body.style.setProperty('overflow-y', 'scroll')
+        }
+    }
+
+    function copyFile(originalFile) {
+        return new File([originalFile], originalFile.name, { type: originalFile.type });
+    }
+
+    formData.addEventListener('submit', function (event) {
+        event.preventDefault()
+
+        const fileInput = document.querySelector('#modal-screen__input-file')
+        const chkbox_1 = document.querySelector('#modal-screen__input-activity_beauty-salon')
+        const chkbox_2 = document.querySelector('#modal-screen__input-activity_beautician')
+        const chkbox_3 = document.querySelector('#modal-screen__input-activity_aesthetic-clinic')
+        const chkbox_4 = document.querySelector('#modal-screen__input-activity_trading')
+
+        let data = new FormData(event.target)
+        const nameSurname = data.get('name-surname')
+        const email = data.get('email')
+        const phone = data.get('phone')
+        const city = data.get('city')
+        let activity
+        let docFile
+
+        const sendData = {}
+
+        if (fileInput.files.length > 0) {
+            docFile = fileInput.files[0]
+        }
+
+        switch (true) {
+            case chkbox_1.checked:
+                activity = chkbox_1.name
+                break;
+
+            case chkbox_2.checked:
+                activity = chkbox_2.name
+                break;
+
+            case chkbox_3.checked:
+                activity = chkbox_3.name
+                break;
+
+            case chkbox_4.checked:
+                activity = chkbox_4.name
+                break;
+
+            default:
+                break;
+        }
+
+        if (nameSurname && email && phone && city && docFile && activity) {
+            sendData.nameSurname = nameSurname
+            sendData.email = email
+            sendData.phone = phone
+            sendData.city = city
+            sendData.docFile = copyFile(docFile)
+            sendData.activity = activity
+
+            closeModalPopUp(event)
+        } else {
+            modalAlert.style.display = 'block'
+        }
+    })
 })

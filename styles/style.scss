@@ -85,6 +85,11 @@
 
   &__item {
     margin-left: 53px;
+    border-bottom: 1px solid #fff;
+
+    &:hover {
+      border-bottom: 1px solid #0033a1;
+    }
 
     & a {
       color: #1f4b98;

@@ -3,6 +3,20 @@ body {
   overflow-x: hidden;
 }
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input:focus {
+  outline: rgba(0, 51, 161, 0.5764705882);
+}
+
+.open-modal-js {
+  cursor: pointer;
+}
+
 :root {
   font-size: 16px;
 }
@@ -129,5 +143,309 @@ a {
   }
   .tablet-show {
     display: block;
+  }
+}
+.modal-screen {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(31, 75, 152, 0.2);
+  -webkit-backdrop-filter: blur(4.5px);
+          backdrop-filter: blur(4.5px);
+  top: 0;
+  left: 0;
+  z-index: 998;
+  display: none;
+}
+.modal-screen__modal-alert {
+  display: none;
+  position: absolute;
+  font-size: 15px;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  color: rgba(252, 55, 55, 0.877);
+}
+.modal-screen__modal {
+  display: none;
+  z-index: 999;
+  border-radius: 10px;
+  background: #fff;
+  max-width: 600px;
+  width: 100%;
+  height: 657px;
+  box-sizing: border-box;
+  padding: 72px 125px 64px 125px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.modal-screen__button-close {
+  position: absolute;
+  right: 18px;
+  top: 18px;
+  background-color: #fff;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+.modal-screen__input {
+  border-radius: 5px;
+  border: 1px solid #d9d9d9;
+  background: #fff;
+  padding: 19px;
+  margin-bottom: 12px;
+  color: #1f4b98;
+  font-family: "Exo 2";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  width: 100%;
+  box-sizing: border-box;
+}
+.modal-screen__input-submit {
+  border: none;
+  color: #fcf5e8;
+  text-align: center;
+  font-family: "Exo 2";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  border-radius: 5px;
+  background: #1f4b98;
+}
+.modal-screen__input-activity-heading {
+  display: block;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+.modal-screen__input-activity-heading::after {
+  content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="15" height="9" viewBox="0 0 15 9" fill="none"><path d="M0.970703 1L7.48542 7.51472L14.0001 1" stroke="%231F4B98"/></svg>');
+  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+}
+.modal-screen__input-activity {
+  overflow: hidden;
+  height: 55px;
+  transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  cursor: pointer;
+  position: absolute;
+  max-width: 350px;
+}
+.modal-screen__input-activity--opened {
+  overflow: hidden;
+  background-color: #fff;
+  z-index: 999;
+  height: 180px;
+}
+.modal-screen__input-activity--opened .modal-screen__input-activity-heading::after {
+  transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+}
+.modal-screen__custom-checkbox {
+  margin-bottom: 12px;
+  position: relative;
+}
+.modal-screen__custom-checkbox > label {
+  padding-left: 24px;
+  color: #aaa;
+  font-family: "Exo 2";
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  display: block;
+  position: relative;
+}
+.modal-screen__custom-checkbox > label::after {
+  content: " ";
+  position: absolute;
+  display: block;
+  padding: 0;
+  box-sizing: border-box;
+  top: 3px;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  background-color: #fff;
+  border: 1px solid #aaaaaa;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+}
+.modal-screen__custom-checkbox input[type=checkbox] {
+  display: none;
+}
+.modal-screen__custom-checkbox input[type=checkbox]:checked + label::after {
+  content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" viewBox="1 -2 12 14" fill="none"><path d="M1 4.25732L3.77204 7.02937L10.0294 0.771973" stroke="%231F4B98"/></svg>');
+}
+.modal-screen__input-submit {
+  padding: 38px 35px;
+  margin-top: 68px;
+  cursor: pointer;
+  margin-bottom: 0;
+}
+.modal-screen__input-activity {
+  display: flex;
+  flex-direction: column;
+}
+.modal-screen__input-submitiom {
+  margin-top: 20px;
+}
+.modal-screen__input-submitiom label {
+  color: #e4e4e4;
+  font-family: "Exo 2";
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+.modal-screen__input-submitiom input[type=checkbox]:checked + label {
+  color: #1f4b98;
+}
+.modal-screen__input-submitiom input[type=checkbox]:checked ~ .modal-screen__input-file > label {
+  background: #e4e4e4;
+  color: #1f4b98;
+}
+.modal-screen__input-submitiom input[type=checkbox]:checked ~ .modal-screen__input-file > label::after {
+  content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="8" height="13" viewBox="0 0 8 13" fill="none"><path d="M7.35931 9.47908V4.17966C7.35931 2.42358 5.93573 1 4.17966 1V1C2.42358 1 1 2.42358 1 4.17966L1 9.47908C1 10.6498 1.94905 11.5989 3.11977 11.5989V11.5989C4.29049 11.5989 5.23954 10.6498 5.23954 9.47908V4.7096C5.23954 4.12424 4.76501 3.64971 4.17966 3.64971V3.64971C3.5943 3.64971 3.11977 4.12424 3.11977 4.7096V9.47908" stroke="%231F4B98"/></svg>');
+}
+.modal-screen__input-file {
+  margin-top: 11px;
+}
+.modal-screen__input-file input {
+  display: none;
+}
+.modal-screen__input-file label {
+  display: block;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background: #e4e4e4;
+  max-width: 122px;
+  width: 100%;
+  max-height: 27px;
+  padding: 5px 7px;
+  color: #fff;
+  text-align: center;
+  font-family: "Exo 2";
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  position: relative;
+  text-align: left;
+}
+.modal-screen__input-file label::after {
+  position: absolute;
+  top: 7px;
+  margin-left: 7px;
+  content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="8" height="13" viewBox="0 0 8 13" fill="none"><path d="M7.35931 9.47908V4.17966C7.35931 2.42358 5.93573 1 4.17966 1V1C2.42358 1 1 2.42358 1 4.17966L1 9.47908C1 10.6498 1.94905 11.5989 3.11977 11.5989V11.5989C4.29049 11.5989 5.23954 10.6498 5.23954 9.47908V4.7096C5.23954 4.12424 4.76501 3.64971 4.17966 3.64971V3.64971C3.5943 3.64971 3.11977 4.12424 3.11977 4.7096V9.47908" stroke="white"/></svg>');
+}
+@media (min-width: 768px) and (max-width: 1217px) {
+  .modal-screen__modal {
+    max-width: 366px;
+    width: 100%;
+    height: 460px;
+    padding: 28px 39px 15px 39px;
+  }
+  .modal-screen__button-close {
+    right: 12px;
+    top: 12px;
+  }
+  .modal-screen__input {
+    padding: 12px 18px;
+    margin-bottom: 9px;
+  }
+  .modal-screen__input-submit {
+    margin-top: 52px;
+    padding: 17px 35px;
+  }
+  .modal-screen__input-activity {
+    height: 42px;
+    max-width: 288px;
+  }
+  .modal-screen__input-activity--opened {
+    height: 180px;
+    max-width: 288px;
+  }
+  .modal-screen__input-submitiom {
+    margin-top: 1px;
+  }
+}
+@media (max-width: 767px) {
+  .modal-screen__modal {
+    max-width: 308px;
+    width: 100%;
+    max-height: 534px;
+    padding: 58px 18px 1px 18px;
+  }
+  .modal-screen__button-close {
+    right: 21px;
+    top: 19px;
+  }
+  .modal-screen__input {
+    padding: 12px 18px;
+    margin-bottom: 9px;
+  }
+  .modal-screen__input-submit {
+    margin-top: 52px;
+    padding: 14px 35px;
+  }
+  .modal-screen__input-activity {
+    height: 42px;
+    max-width: 272px;
+  }
+  .modal-screen__input-activity--opened {
+    height: 180px;
+  }
+  .modal-screen__input-submitiom {
+    margin-top: 1px;
+  }
+}
+@media (max-height: 545px) and (max-width: 400px) {
+  .modal-screen__modal {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -45%);
+    -webkit-transform: translate(-50%, -45%);
+    -moz-transform: translate(-50%, -45%);
+    -ms-transform: translate(-50%, -45%);
+    -o-transform: translate(-50%, -45%);
+  }
+}
+@media (orientation: landscape) {
+  .modal-screen__modal {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    -webkit-transform: translate(-50%, -40%);
+    -moz-transform: translate(-50%, -40%);
+    -ms-transform: translate(-50%, -40%);
+    -o-transform: translate(-50%, -40%);
   }
 }/*# sourceMappingURL=common_styles.css.map */

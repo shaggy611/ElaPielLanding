@@ -208,7 +208,8 @@
                                 <span>Лікування</span>
                             </div>
                         </div>
-                        <button class="welcome-screen__slide-2_button" type="button">Дізнатись більше </button>
+                        <button class="welcome-screen__slide-2_button open-modal-js" type="button">Дізнатись більше
+                        </button>
                     </div>
                     <img src="/images/welcome_screen_product_1.png" alt="GL PEPTIDE PEEL PHOTO">
                 </div>
@@ -277,7 +278,8 @@
                                 <span>Лікування</span>
                             </div>
                         </div>
-                        <button class="welcome-screen__slide-3_button" type="button">Дізнатись більше </button>
+                        <button class="welcome-screen__slide-3_button open-modal-js" type="button">Дізнатись більше
+                        </button>
                     </div>
                     <img src="/images/welcome_screen_product_2.png" alt="GL PEPTIDE PEEL PHOTO">
                 </div>
@@ -769,7 +771,8 @@
 
         <section id="three-steps" class="three-steps">
             <div class="fixed-container">
-                <a href="#" class="three-steps__cta-button basic-button">Дізнайтесь, як стати партнером</a>
+                <a class="three-steps__cta-button basic-button open-modal-js">Дізнайтесь, як стати
+                    партнером</a>
                 <h2 class="three-steps__second-heading second-heading">3 кроки до ідеальної шкіри</h2>
                 <div class="three-steps__steps-wrapper">
                     <div class="three-steps__step-item three-steps__step-item_1">
@@ -995,7 +998,7 @@
 
         <section id="cooperation" class="cooperation">
             <div class="fixed-container">
-                <a href="#" class="cooperation__cta-button basic-button">Як купити</a>
+                <a class="cooperation__cta-button basic-button open-modal-js">Як купити</a>
                 <h2 class="cooperation__second-heading second-heading">Працюйте з нами за межами України</h2>
                 <p class="cooperation__subheading">Професійні пілінги з Європи для салонів, клінік та косметологів</p>
 
@@ -1007,19 +1010,19 @@
                     <div class="cooperation__content__list-wrapper">
                         <p class="cooperation__content__list-title">Запрошуємо до співпраці:</p>
                         <div class="cooperation__content__list">
-                            <div class="cooperation__content__list-item">
+                            <div class="cooperation__content__list-item open-modal-js">
                                 <button type="button">Салони краси</button>
                             </div>
-                            <div class="cooperation__content__list-item">
+                            <div class="cooperation__content__list-item open-modal-js">
                                 <button type="button">Приватних косметологів</button>
                             </div>
-                            <div class="cooperation__content__list-item">
+                            <div class="cooperation__content__list-item open-modal-js">
                                 <button type="button">Клініки естетичної медицини</button>
                             </div>
-                            <div class="cooperation__content__list-item">
+                            <div class="cooperation__content__list-item open-modal-js">
                                 <button type="button">ОПТОВІ та роздрібні ПРОДАЖІ</button>
                             </div>
-                            <a href="#" class="cooperation__list-item-cta basic-button">Дізнайтесь, як стати
+                            <a class="cooperation__list-item-cta basic-button open-modal-js">Дізнайтесь, як стати
                                 партнером</a>
                         </div>
                     </div>
@@ -1230,6 +1233,73 @@
             </div>
         </div>
     </footer>
+
+    <div class="modal-screen">
+        <div class="modal-screen__modal">
+            <span class="modal-screen__modal-alert">Ви не заповнили всі поля!</span>
+            <button class="modal-screen__button-close modal-screen__button-close-svg" type="button">
+                <svg class="modal-screen__button-close-svg" xmlns="http://www.w3.org/2000/svg" width="11" height="11"
+                    viewBox="0 0 11 11" fill="none">
+                    <path class="modal-screen__button-close-svg" fill-rule="evenodd" clip-rule="evenodd"
+                        d="M9.8995 9.89959C9.50897 10.2901 8.87581 10.2901 8.48528 9.89959L0.707107 2.12141C0.316583 1.73089 0.316582 1.09772 0.707107 0.7072C1.09763 0.316676 1.7308 0.316675 2.12132 0.7072L9.8995 8.48537C10.29 8.8759 10.29 9.50906 9.8995 9.89959Z"
+                        fill="#1F4B98" />
+                    <path class="modal-screen__button-close-svg" fill-rule="evenodd" clip-rule="evenodd"
+                        d="M0.708077 9.89974C0.317553 9.50921 0.317553 8.87605 0.708077 8.48552L8.48625 0.707351C8.87678 0.316827 9.50994 0.316827 9.90047 0.707351C10.291 1.09788 10.291 1.73104 9.90047 2.12156L2.12229 9.89974C1.73177 10.2903 1.0986 10.2903 0.708077 9.89974Z"
+                        fill="#1F4B98" />
+                </svg>
+            </button>
+            <form id="pop-up-form-js" class="pop-up-form-js">
+                <input name="name-surname" class="modal-screen__input modal-screen__input-text" type="text"
+                    placeholder="Ім’я та Прізвище">
+                <input name="email" class="modal-screen__input modal-screen__input-email" type="email"
+                    placeholder="Email">
+                <input name="phone" class="modal-screen__input modal-screen__input-number" type="number"
+                    placeholder="Телефон">
+                <input name="city" class="modal-screen__input modal-screen__input-text" type="text" placeholder="Місто">
+                <div class="modal-screen__input modal-screen__input-activity">
+
+                    <span class="modal-screen__input-activity-heading">Оберіть ваш напрямок</span>
+
+                    <div class="modal-screen__custom-checkbox">
+                        <input class="modal-screen__input-activity_checkbox"
+                            id="modal-screen__input-activity_beauty-salon" type="checkbox" name="Салон краси">
+                        <label for="modal-screen__input-activity_beauty-salon">Салон краси</label>
+                    </div>
+
+                    <div class="modal-screen__custom-checkbox">
+                        <input class="modal-screen__input-activity_checkbox"
+                            id="modal-screen__input-activity_beautician" type="checkbox" name="Косметолог">
+                        <label for="modal-screen__input-activity_beautician">Косметолог</label>
+                    </div>
+
+                    <div class="modal-screen__custom-checkbox">
+                        <input class="modal-screen__input-activity_checkbox"
+                            id="modal-screen__input-activity_aesthetic-clinic" type="checkbox"
+                            name="Клініка естетичної медицини">
+                        <label for="modal-screen__input-activity_aesthetic-clinic">Клініка естетичної медицини</label>
+                    </div>
+
+                    <div class="modal-screen__custom-checkbox">
+                        <input class="modal-screen__input-activity_checkbox" id="modal-screen__input-activity_trading"
+                            type="checkbox" name="Оптова та роздрібна продаж">
+                        <label for="modal-screen__input-activity_trading">Оптова та роздрібна продаж</label>
+                    </div>
+                </div>
+                <input class="modal-screen__input modal-screen__input-submit" type="submit" value="Надіслати заявку">
+                <div class="modal-screen__custom-checkbox modal-screen__input-submitiom">
+                    <input class="modal-screen__input-activity_checkbox" id="modal-screen__input-submitiom"
+                        type="checkbox">
+                    <label for="modal-screen__input-submitiom">Шоб підтвердити, що ви фахівець підтвердіть,
+                        будь-ласка, відправивши диплом </label>
+
+                    <div name="doc-file" class="modal-screen__input-file">
+                        <input id="modal-screen__input-file" type="file" disabled>
+                        <label for="modal-screen__input-file">Загрузіть файл</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
     <script type="module" src="/main.js"></script>
 </body>
 
