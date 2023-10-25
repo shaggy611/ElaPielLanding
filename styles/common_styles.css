@@ -266,7 +266,7 @@ a {
   -o-transform: rotate(0deg);
 }
 .modal-screen__custom-checkbox {
-  margin-bottom: 12px;
+  margin-bottom: 16px;
   position: relative;
 }
 .modal-screen__custom-checkbox > label {
