@@ -8,6 +8,12 @@ import Gallery from './gallery';
 
 document.addEventListener('DOMContentLoaded', () => {
 
+    if (document.documentElement.scrollTop) {
+        document.documentElement.scrollTop = 1;
+    } else {
+        document.body.scrollTop = 1;
+    }
+
     const productGallery_1 = document.querySelector('#product-gallery_1')
     const productGallery_2 = document.querySelector('#product-gallery_2')
     const menuToggler = document.querySelector('#show-mobile-menu')
