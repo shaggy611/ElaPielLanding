@@ -34,7 +34,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const inputSubmition = document.querySelector('#modal-screen__input-submitiom')
     const fileInputCheck = document.querySelector('#modal-screen__input-file')
     const modalAlert = document.querySelector('.modal-screen__modal-alert')
-    const activityCheckBoxes = document.querySelectorAll('.modal-screen__input-activity_checkbox')
+    const activityCheckBoxes = document.querySelectorAll('.modal-screen__input-activity_checkbox-js')
+    const globalEventListener = document.querySelector('.globalEventListener')
+    const telegramChannelLink = 'https://web.telegram.org/'
+
+    globalEventListener.addEventListener('click', addLIstenersforModalButton)
 
     const options = {
         root: slider, // viewport
@@ -108,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
             slider.classList.remove('welcome-screen__slider-scroll-left')
         }, 2000)
 
-        addLIstenersforModalButton()
+        // addLIstenersforModalButton()
     }
 
 
@@ -125,36 +129,52 @@ document.addEventListener('DOMContentLoaded', () => {
 
         closeModal.addEventListener('click', closeModalPopUp)
         modalScreen.addEventListener('click', closeModalPopUp)
-        addLIstenersforModalButton()
 
-        activityCheckBoxes.forEach(item => {
+        // activityCheckBoxes.forEach(item => {
 
-            item.addEventListener('click', function (event) {
+        //     item.addEventListener('click', function (event) {
 
-                let choosenParameter = event.target.parentNode.cloneNode(true)
-                event.target.parentNode.remove()
-                modalDopDownList.insertAdjacentElement('afterbegin', choosenParameter)
-                modalDopDownList.classList.toggle('modal-screen__input-activity--opened')
-                modalDopDownListTitle.style.display = 'none'
+        //         let choosenParameter = event.target.parentNode.cloneNode(true)
+        //         event.target.parentNode.remove()
+        //         modalDopDownList.insertAdjacentElement('afterbegin', choosenParameter)
+        //         modalDopDownList.classList.toggle('modal-screen__input-activity--opened')
+        //         modalDopDownListTitle.style.display = 'none'
 
-                activityCheckBoxes.forEach(function (otherRadioButton) {
-                    console.log('check')
-                    if (otherRadioButton !== item) {
-                        otherRadioButton.checked = false;
+        //         activityCheckBoxes.forEach(otherRadioButton => {
+        //             console.log(otherRadioButton.checked)
+        //             if (otherRadioButton.checked === item.checked) {
+        //                 otherRadioButton.checked = false;
+        //             }
+        //         });
+        //     })
+        // })
+
+        modal.addEventListener('change', function (event) {
+            if (event.target.classList.contains('modal-screen__input-activity_checkbox-js')) {
+
+                activityCheckBoxes.forEach(function (otherCheckbox) {
+                    if (otherCheckbox !== event.target) {
+                        otherCheckbox.checked = false;
                     }
                 });
-            })
+
+                event.target.checked = true;
+                let choosenParameter = event.target.parentNode
+                modalDopDownList.insertBefore(choosenParameter, modalDopDownList.firstChild)
+                modalDopDownList.classList.toggle('modal-screen__input-activity--opened')
+                modalDopDownListTitle.style.display = 'none'
+            }
         })
     }
 
-    function addLIstenersforModalButton() {
-        openModalButton.forEach(btn => {
-            btn.addEventListener('click', function () {
-                modalScreen.style.display = 'block'
-                modal.style.display = 'block'
-                document.body.style.setProperty('overflow', 'hidden')
-            })
-        })
+    function addLIstenersforModalButton(event = undefined) {
+        if (event && event.target.classList.contains('open-modal-js')) {
+            modalScreen.style.display = 'block'
+            modal.style.display = 'block'
+            document.body.style.setProperty('overflow', 'hidden')
+        } else {
+            return
+        }
     }
 
     function closeModalPopUp(event) {
@@ -222,6 +242,7 @@ document.addEventListener('DOMContentLoaded', () => {
             sendData.activity = activity
 
             closeModalPopUp(event)
+            window.location.href = telegramChannelLink;
         } else {
             modalAlert.style.display = 'block'
         }
