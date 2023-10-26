@@ -215,8 +215,9 @@
                                 <span>Лікування</span>
                             </div>
                         </div>
-                        <button class="welcome-screen__slide-2_button open-modal-js" type="button">Дізнатись більше
-                        </button>
+                        <a href="#gl_peptide_phyto_peel" class="welcome-screen__slide-2_button" type="button">Дізнатись
+                            більше
+                        </a>
                     </div>
                     <img src="/images/welcome_screen_product_1.png" alt="GL PEPTIDE PEEL PHOTO">
                 </div>
@@ -285,8 +286,9 @@
                                 <span>Лікування</span>
                             </div>
                         </div>
-                        <button class="welcome-screen__slide-3_button open-modal-js" type="button">Дізнатись більше
-                        </button>
+                        <a href="#mandelic_phyto_peel" class="welcome-screen__slide-3_button" type="button">Дізнатись
+                            більше
+                        </a>
                     </div>
                     <img src="/images/welcome_screen_product_2.png" alt="GL PEPTIDE PEEL PHOTO">
                 </div>
@@ -326,7 +328,7 @@
             <h2 class="top-products__second-heading second-heading">топ продуктів</h2>
 
             <div class="fixed-container top-products__position-relative">
-                <div class="top-products__product">
+                <div class="top-products__product" id="gl_peptide_phyto_peel">
                     <h3 class="top-products__product-description_title mobile-show">GL PEPTIDE PHYTO PEEL</h3>
                     <div class="top-products__product-gallery" id="product-gallery_1">
                         <div class="top-products__product-gallery_navigation">
@@ -554,7 +556,7 @@
                         </div>
                     </article>
                 </div>
-                <div class="top-products__product">
+                <div class="top-products__product" id="mandelic_phyto_peel">
                     <h3 class="top-products__product-description_title mobile-show">MANDELIC PHYTO PEEL</h3>
                     <div class="top-products__product-gallery" id="product-gallery_2">
                         <div class="top-products__product-gallery_navigation">
@@ -780,7 +782,7 @@
             <div class="fixed-container">
                 <a class="three-steps__cta-button basic-button open-modal-js">Дізнайтесь, як стати
                     партнером</a>
-                <h2 class="three-steps__second-heading second-heading">3 кроки до ідеальної шкіри</h2>
+                <h2 class="three-steps__second-heading second-heading">три кроки до ідеальної шкіри</h2>
                 <div class="three-steps__steps-wrapper">
                     <div class="three-steps__step-item three-steps__step-item_1">
                         <span class="three-steps__step-item-step three-steps__step-item-step--add-position">1</span>
@@ -925,11 +927,13 @@
 
         <section id="ecology" class="ecology">
             <div class="fixed-container">
-                <span class="ecology__bage small-bage">
-                    <img src="/images/flower-ico.svg" alt="Flower ico">
-                    Найбільш важливо
-                </span>
-                <h2 class="ecology__second-heading second-heading">Экологічність і безпека</h2>
+                <div class="ecology__second-heading-wrapper">
+                    <span class="ecology__bage small-bage">
+                        <img src="/images/flower-ico.svg" alt="Flower ico">
+                        Найбільш важливо
+                    </span>
+                    <h2 class="ecology__second-heading second-heading">Экологічність і безпека</h2>
+                </div>
 
                 <div class="ecology__card">
                     <div class="ecology__card_img">
@@ -998,6 +1002,7 @@
                                 бізнесу, через це ми – <b>підходимо до вирішення всіх питань індивідуально,</b>
                                 гарантуючи високу якість співпраці.</p>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -1293,13 +1298,13 @@
                     </div>
                 </div>
                 <input class="modal-screen__input modal-screen__input-submit" type="submit" value="Надіслати заявку">
-                <div class="modal-screen__custom-checkbox modal-screen__input-submitiom">
+                <div class="modal-screen__custom-checkbox modal-screen__input-submitiom disabled">
                     <input class="modal-screen__input-activity_checkbox" id="modal-screen__input-submitiom"
-                        type="checkbox">
+                        type="checkbox" disabled>
                     <label for="modal-screen__input-submitiom">Шоб підтвердити, що ви фахівець підтвердіть,
                         будь-ласка, відправивши диплом </label>
 
-                    <div name="doc-file" class="modal-screen__input-file">
+                    <div name="doc-file" class="modal-screen__input-file disabled">
                         <input id="modal-screen__input-file" type="file" disabled>
                         <label for="modal-screen__input-file">Загрузіть файл</label>
                     </div>

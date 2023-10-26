@@ -243,6 +243,7 @@ a {
 .modal-screen__input-activity {
   overflow: hidden;
   height: 55px;
+  background-color: #fff;
   transition: all 1s ease;
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
@@ -251,6 +252,7 @@ a {
   cursor: pointer;
   position: absolute;
   max-width: 350px;
+  z-index: 999;
 }
 .modal-screen__input-activity--opened {
   overflow: hidden;
@@ -317,7 +319,7 @@ a {
 .modal-screen__input-submitiom {
   margin-top: 20px;
 }
-.modal-screen__input-submitiom label {
+.modal-screen__input-submitiom.disabled label {
   color: #e4e4e4;
   font-family: "Exo 2";
   font-size: 13px;
@@ -325,23 +327,41 @@ a {
   font-weight: 300;
   line-height: normal;
 }
-.modal-screen__input-submitiom input[type=checkbox]:checked + label {
+.modal-screen__input-submitiom.disabled label::after {
+  border: 1px solid #e4e4e4;
+}
+.modal-screen__input-submitiom.enabled label {
   color: #1f4b98;
 }
-.modal-screen__input-submitiom input[type=checkbox]:checked ~ .modal-screen__input-file > label {
+.modal-screen__input-submitiom.enabled .modal-screen__input-file > label {
   background: #e4e4e4;
   color: #1f4b98;
 }
-.modal-screen__input-submitiom input[type=checkbox]:checked ~ .modal-screen__input-file > label::after {
+.modal-screen__input-submitiom.enabled .modal-screen__input-file > label::after {
   content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="8" height="13" viewBox="0 0 8 13" fill="none"><path d="M7.35931 9.47908V4.17966C7.35931 2.42358 5.93573 1 4.17966 1V1C2.42358 1 1 2.42358 1 4.17966L1 9.47908C1 10.6498 1.94905 11.5989 3.11977 11.5989V11.5989C4.29049 11.5989 5.23954 10.6498 5.23954 9.47908V4.7096C5.23954 4.12424 4.76501 3.64971 4.17966 3.64971V3.64971C3.5943 3.64971 3.11977 4.12424 3.11977 4.7096V9.47908" stroke="%231F4B98"/></svg>');
 }
+.modal-screen__input-file.disabled {
+  cursor: not-allowed;
+}
+.modal-screen__input-file.disabled input {
+  display: none;
+}
+.modal-screen__input-file.disabled label {
+  cursor: not-allowed;
+  color: #fff;
+}
+.modal-screen__input-file.disabled label::after {
+  cursor: not-allowed;
+}
 .modal-screen__input-file {
+  cursor: pointer;
   margin-top: 11px;
 }
 .modal-screen__input-file input {
   display: none;
 }
 .modal-screen__input-file label {
+  cursor: pointer;
   display: block;
   box-sizing: border-box;
   border-radius: 5px;
@@ -361,6 +381,7 @@ a {
   text-align: left;
 }
 .modal-screen__input-file label::after {
+  cursor: pointer;
   position: absolute;
   top: 7px;
   margin-left: 7px;

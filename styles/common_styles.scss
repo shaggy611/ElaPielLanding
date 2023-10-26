@@ -267,6 +267,7 @@ a {
   &__input-activity {
     overflow: hidden;
     height: 55px;
+    background-color: #fff;
     transition: all 1s ease;
     -webkit-transition: all 1s ease;
     -moz-transition: all 1s ease;
@@ -275,6 +276,7 @@ a {
     cursor: pointer;
     position: absolute;
     max-width: 350px;
+    z-index: 999;
   }
 
   &__input-activity--opened {
@@ -353,23 +355,24 @@ a {
     margin-top: 20px;
   }
 
-  &__input-submitiom label {
+  &__input-submitiom.disabled label {
     color: #e4e4e4;
     font-family: 'Exo 2';
     font-size: 13px;
     font-style: normal;
     font-weight: 300;
     line-height: normal;
+
+    &::after {
+      border: 1px solid #e4e4e4;
+    }
   }
 
-  &__input-submitiom input[type='checkbox']:checked + label {
+  &__input-submitiom.enabled label {
     color: #1f4b98;
   }
 
-  &__input-submitiom
-    input[type='checkbox']:checked
-    ~ .modal-screen__input-file
-    > label {
+  &__input-submitiom.enabled .modal-screen__input-file > label {
     background: #e4e4e4;
     color: #1f4b98;
 
@@ -378,13 +381,32 @@ a {
     }
   }
 
+  &__input-file.disabled {
+    cursor: not-allowed;
+
+    & input {
+      display: none;
+    }
+
+    & label {
+      cursor: not-allowed;
+      color: #fff;
+
+      &::after {
+        cursor: not-allowed;
+      }
+    }
+  }
+
   &__input-file {
+    cursor: pointer;
     margin-top: 11px;
     & input {
       display: none;
     }
 
     & label {
+      cursor: pointer;
       display: block;
       box-sizing: border-box;
       border-radius: 5px;
@@ -404,6 +426,7 @@ a {
       text-align: left;
 
       &::after {
+        cursor: pointer;
         position: absolute;
         top: 7px;
         margin-left: 7px;

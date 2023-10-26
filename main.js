@@ -37,6 +37,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const activityCheckBoxes = document.querySelectorAll('.modal-screen__input-activity_checkbox-js')
     const globalEventListener = document.querySelector('.globalEventListener')
     const telegramChannelLink = 'https://web.telegram.org/'
+    const threeSteps = document.querySelectorAll('.three-steps__step-item')
+    const threeStepsSecondSlide = document.querySelector('.three-steps__step-item_2')
+    const aboutSection = document.querySelector('.about')
+    const aboutSectionHeadings = document.querySelectorAll('.about__info-heading')
+    const partnersiptItems = document.querySelectorAll('.partnership__values_list-item')
+    const partnershipSection = document.querySelector('.partnership')
 
     globalEventListener.addEventListener('click', addLIstenersforModalButton)
 
@@ -63,11 +69,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const gallery_2 = new Gallery('#product-gallery_2').initialize()
     }
 
-    inputSubmition.addEventListener('click', function () {
-        if (inputSubmition.checked) {
-            fileInputCheck.disabled = false
-        }
-    })
+    // inputSubmition.addEventListener('click', function () {
+    //     if (inputSubmition.checked) {
+    //         fileInputCheck.disabled = false
+    //     }
+    // })
 
     menuToggler.addEventListener('click', function () {
         if (menuToggler.checked) {
@@ -87,14 +93,30 @@ document.addEventListener('DOMContentLoaded', () => {
     const fiveStepsSection = document.querySelector('.five-steps__scroll-spy-js')
     let scrollPosition
     let targetPosition
+    let aboutSectionPosition
+    let partnersiptItemsPosition
 
-    if (fiveStepsSection) {
+    if (fiveStepsSection || aboutSection || partnershipSection) {
         window.addEventListener("scroll", function (e) {
             scrollPosition = window.scrollY
             targetPosition = fiveStepsSection.offsetTop
+            aboutSectionPosition = aboutSection.offsetTop
+            partnersiptItemsPosition = partnershipSection.offsetTop
 
             if (scrollPosition >= (targetPosition - 350)) {
                 fiveStepsSection.classList.add('activate-animation')
+            }
+
+            if (scrollPosition >= (aboutSectionPosition - 350)) {
+                aboutSectionHeadings.forEach(item => {
+                    item.classList.add('about__info-heading--appear')
+                })
+            }
+
+            if (scrollPosition >= (partnersiptItemsPosition - 350)) {
+                partnersiptItems.forEach(item => {
+                    item.classList.add('partnership__values_list-item--animate')
+                })
             }
         })
     }
@@ -110,12 +132,29 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
             firstSliderChild.remove()
             slider.classList.remove('welcome-screen__slider-scroll-left')
-        }, 2000)
-
-        // addLIstenersforModalButton()
+        }, 3600)
     }
 
+    if (threeSteps) {
+        threeStepsSecondSlide.classList.add('three-steps__step-item--hovered')
 
+        threeSteps.forEach(item => {
+
+            item.addEventListener('mouseover', function () {
+                threeSteps.forEach(otherItem => {
+                    if (otherItem.classList.contains('three-steps__step-item--hovered')) {
+                        otherItem.classList.remove('three-steps__step-item--hovered')
+                    } item.classList.add('three-steps__step-item--hovered')
+                })
+            })
+        })
+
+        threeSteps.forEach(item => {
+            item.addEventListener('mouseout', function () {
+                item.classList.remove('three-steps__step-item--hovered')
+            })
+        })
+    }
 
     if (slider) {
         observer.observe(video);
@@ -130,25 +169,6 @@ document.addEventListener('DOMContentLoaded', () => {
         closeModal.addEventListener('click', closeModalPopUp)
         modalScreen.addEventListener('click', closeModalPopUp)
 
-        // activityCheckBoxes.forEach(item => {
-
-        //     item.addEventListener('click', function (event) {
-
-        //         let choosenParameter = event.target.parentNode.cloneNode(true)
-        //         event.target.parentNode.remove()
-        //         modalDopDownList.insertAdjacentElement('afterbegin', choosenParameter)
-        //         modalDopDownList.classList.toggle('modal-screen__input-activity--opened')
-        //         modalDopDownListTitle.style.display = 'none'
-
-        //         activityCheckBoxes.forEach(otherRadioButton => {
-        //             console.log(otherRadioButton.checked)
-        //             if (otherRadioButton.checked === item.checked) {
-        //                 otherRadioButton.checked = false;
-        //             }
-        //         });
-        //     })
-        // })
-
         modal.addEventListener('change', function (event) {
             if (event.target.classList.contains('modal-screen__input-activity_checkbox-js')) {
 
@@ -156,7 +176,28 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (otherCheckbox !== event.target) {
                         otherCheckbox.checked = false;
                     }
+
                 });
+
+                if (event.target.id === 'modal-screen__input-activity_beautician') {
+                    inputSubmition.disabled = false
+                    fileInputCheck.disabled = false
+
+                    inputSubmition.parentNode.classList.add('enabled')
+                    fileInputCheck.parentNode.classList.add('enabled')
+
+                    inputSubmition.parentNode.classList.remove('disabled')
+                    fileInputCheck.parentNode.classList.remove('disabled')
+                } else {
+                    inputSubmition.disabled = true
+                    fileInputCheck.disabled = true
+
+                    inputSubmition.parentNode.classList.add('disabled')
+                    fileInputCheck.parentNode.classList.add('disabled')
+
+                    inputSubmition.parentNode.classList.remove('enabled')
+                    fileInputCheck.parentNode.classList.remove('enabled')
+                }
 
                 event.target.checked = true;
                 let choosenParameter = event.target.parentNode
@@ -209,7 +250,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const sendData = {}
 
         if (fileInput.files.length > 0) {
-            docFile = fileInput.files[0]
+            docFile = copyFile(fileInput.files[0])
+        } else {
+            docFile = ''
         }
 
         switch (true) {
@@ -233,17 +276,33 @@ document.addEventListener('DOMContentLoaded', () => {
                 break;
         }
 
-        if (nameSurname && email && phone && city && docFile && activity) {
+        if (nameSurname && email && phone && city && activity !== '' && activity !== 'Косметолог') {
             sendData.nameSurname = nameSurname
             sendData.email = email
             sendData.phone = phone
             sendData.city = city
-            sendData.docFile = copyFile(docFile)
+            sendData.docFile = docFile
             sendData.activity = activity
 
+            console.log(sendData)
             closeModalPopUp(event)
             window.location.href = telegramChannelLink;
-        } else {
+        }
+
+        else if (nameSurname && email && phone && city && activity === 'Косметолог' && docFile) {
+            sendData.nameSurname = nameSurname
+            sendData.email = email
+            sendData.phone = phone
+            sendData.city = city
+            sendData.docFile = docFile
+            sendData.activity = activity
+
+            console.log(sendData)
+            closeModalPopUp(event)
+            window.location.href = telegramChannelLink;
+        }
+        
+        else {
             modalAlert.style.display = 'block'
         }
     })
