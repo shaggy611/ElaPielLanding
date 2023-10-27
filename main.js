@@ -22,7 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const productGallery_2 = document.querySelector('#product-gallery_2')
     const menuToggler = document.querySelector('#show-mobile-menu')
     const mobileMenu = document.querySelector('#mobile-menu-roller-js')
-    let slider = document.querySelector('.welcome-screen')
+    const slider = document.querySelector('.welcome-screen')
+    const sliderLeftBtn = document.querySelector('.welcome-screen__slider-button-left')
+    const sliderRightBtn = document.querySelector('.welcome-screen__slider-button-right')
     const video = document.querySelector('#video_bg');
     const modalDopDownList = document.querySelector('.modal-screen__input-activity')
     const modalDopDownListTitle = document.querySelector('.modal-screen__input-activity-heading')
@@ -43,13 +45,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const aboutSectionHeadings = document.querySelectorAll('.about__info-heading')
     const partnersiptItems = document.querySelectorAll('.partnership__values_list-item')
     const partnershipSection = document.querySelector('.partnership')
+    const fiveStepsSection = document.querySelector('.five-steps__scroll-spy-js')
+    const sliderBlocks = document.querySelectorAll('.welcome-screen__slide')
+    let currentIndex = 0;
+    let interval
+    let scrollPosition
+    let targetPosition
+    let aboutSectionPosition
+    let partnersiptItemsPosition
 
     globalEventListener.addEventListener('click', addLIstenersforModalButton)
 
     const options = {
-        root: slider, // viewport
+        root: slider,
         rootMargin: '0px',
-        threshold: 0.2 // якщо 50% елементу видно
+        threshold: 0.2
     };
 
     const observer = new IntersectionObserver((entries, observer) => {
@@ -69,12 +79,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const gallery_2 = new Gallery('#product-gallery_2').initialize()
     }
 
-    // inputSubmition.addEventListener('click', function () {
-    //     if (inputSubmition.checked) {
-    //         fileInputCheck.disabled = false
-    //     }
-    // })
-
     menuToggler.addEventListener('click', function () {
         if (menuToggler.checked) {
             document.body.style.setProperty('overflow', 'hidden')
@@ -89,12 +93,6 @@ document.addEventListener('DOMContentLoaded', () => {
             menuToggler.checked = false
         }
     })
-
-    const fiveStepsSection = document.querySelector('.five-steps__scroll-spy-js')
-    let scrollPosition
-    let targetPosition
-    let aboutSectionPosition
-    let partnersiptItemsPosition
 
     if (fiveStepsSection || aboutSection || partnershipSection) {
         window.addEventListener("scroll", function (e) {
@@ -121,20 +119,6 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     }
 
-    function mainScreenSlider() {
-        let firstSliderChild = slider.firstElementChild
-        let clone = firstSliderChild.cloneNode(true)
-
-        slider.appendChild(clone)
-        slider.classList.add('welcome-screen__slider-scroll-left')
-        observer.observe(video);
-
-        setTimeout(() => {
-            firstSliderChild.remove()
-            slider.classList.remove('welcome-screen__slider-scroll-left')
-        }, 3600)
-    }
-
     if (threeSteps) {
         threeStepsSecondSlide.classList.add('three-steps__step-item--hovered')
 
@@ -158,7 +142,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (slider) {
         observer.observe(video);
-        let interval = setInterval(mainScreenSlider, 5000)
+        // let interval = setInterval(mainScreenSlider, 5000)
+        interval = setInterval(mainScreenSliderRight, 5000);
+
+        sliderLeftBtn.addEventListener('click', function () {
+            clearInterval(interval)
+            slider.classList.remove('welcome-screen__slider-scroll-left')
+            mainScreenSliderLeft()
+        })
+
+        sliderRightBtn.addEventListener('click', function () {
+            clearInterval(interval)
+            slider.classList.remove('welcome-screen__slider-scroll-left')
+            mainScreenSliderRight()
+        })
     }
 
     if (modal) {
@@ -229,6 +226,47 @@ document.addEventListener('DOMContentLoaded', () => {
     function copyFile(originalFile) {
         return new File([originalFile], originalFile.name, { type: originalFile.type });
     }
+
+    function mainScreenSlider() {
+        let firstSliderChild = slider.firstElementChild
+        let clone = firstSliderChild.cloneNode(true)
+
+        slider.appendChild(clone)
+        slider.classList.add('welcome-screen__slider-scroll-left')
+        observer.observe(video);
+
+        setTimeout(() => {
+            firstSliderChild.remove()
+            slider.classList.remove('welcome-screen__slider-scroll-left')
+        }, 3600)
+    }
+
+    // function mainScreenSliderLeft() {
+    //     let lastSliderChild = slider.lastElementChild
+    //     // let firstSliderChild = slider.firstElementChild
+    //     // lastSliderChild.classList.add('appear-slide-click')
+    //     // lastSliderChild.style.transition = 'opacity 2s'
+    //     // lastSliderChild.style.opacity = 1
+
+
+    //     slider.insertBefore(lastSliderChild, slider.firstChild)
+
+    // }
+
+    // function mainScreenSliderRight() {
+    //     let firstSliderChild = slider.firstElementChild
+    //     slider.classList.add('appear-slide-click')
+    //     slider.insertBefore(firstSliderChild, slider.lastElementChild.nextSibling)
+    //     firstSliderChild.style.opacity = 1
+
+    //     // firstSliderChild.classList.remove('appear-slide-click')
+    //     // firstSliderChild.style.opacity = 0
+    //     // firstSliderChild.style.transition = ''
+    //     // firstSliderChild.nextElementSibling.classList.add('appear-slide-click')
+    //     // firstSliderChild.nextElementSibling.style.opacity = 1
+    //     // firstSliderChild.nextElementSibling.style.transition = 'opacity 2s'
+    //     // slider.classList.add('welcome-screen__slider-scroll-left')
+    // }
 
     formData.addEventListener('submit', function (event) {
         event.preventDefault()
@@ -301,9 +339,31 @@ document.addEventListener('DOMContentLoaded', () => {
             closeModalPopUp(event)
             window.location.href = telegramChannelLink;
         }
-        
+
         else {
             modalAlert.style.display = 'block'
         }
     })
+    function showSlide(index) {
+        let translateValue = -index * sliderBlocks[0].offsetWidth;
+        sliderBlocks.forEach(function (block) {
+            block.style.transform = 'translateX(' + translateValue + 'px)';
+        });
+    }
+
+    function mainScreenSliderRight() {
+        currentIndex = (currentIndex + 1) % sliderBlocks.length;
+        showSlide(currentIndex);
+
+        if (currentIndex === 0) {
+            clearInterval(interval);
+            interval = setInterval(mainScreenSliderRight, 5000);
+
+        }
+    }
+
+    function mainScreenSliderLeft() {
+        currentIndex = (currentIndex - 1 + sliderBlocks.length) % sliderBlocks.length;
+        showSlide(currentIndex);
+    }
 })

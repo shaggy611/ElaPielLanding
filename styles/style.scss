@@ -195,27 +195,80 @@
 
 // Welcome screen
 .welcome-screen {
-  // max-height: 642px;
-  // overflow: hidden;
   position: relative;
   padding: 0 0 2px 0;
   display: flex;
-  // grid-template-rows: 1fr 1fr 1fr;
-  // flex-wrap: nowrap;
   flex-direction: row;
 
-  &__slider-scroll-left {
-    transform: translateX(calc(-100vw + 20px));
-    -webkit-transform: translateX(calc(-100vw + 20px));
-    -moz-transform: translateX(calc(-100vw + 20px));
-    -ms-transform: translateX(calc(-100vw + 20px));
-    -o-transform: translateX(calc(-100vw + 20px));
-    transition: all 3.5s ease;
-    -webkit-transition: all 3.5s ease;
-    -moz-transition: all 3.5s ease;
-    -ms-transition: all 3.5s ease;
-    -o-transition: all 3.5s ease;
+  &__slider-button-left {
+    user-select: none;
+    position: absolute;
+    display: block;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    left: 3%;
+    top: 39%;
+    z-index: 999;
+    content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="46" height="45" viewBox="0 0 46 45" fill="none"><circle cx="23.1123" cy="22.3369" r="21.8369" transform="rotate(90 23.1123 22.3369)" stroke="white"/><path d="M28.0273 23.479L23.0627 18.5144L18.0982 23.479" stroke="white"/></svg>');
+    transform: translateX(-50%) rotate(-90deg);
+    -webkit-transform: translateX(-50%) rotate(-90deg);
+    -moz-transform: translateX(-50%) rotate(-90deg);
+    -ms-transform: translateX(-50%) rotate(-90deg);
+    -o-transform: translateX(-50%) rotate(-90deg);
   }
+
+  &__slider-button-right {
+    user-select: none;
+    position: absolute;
+    display: block;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="46" height="45" viewBox="0 0 46 45" fill="none"><circle cx="23.1123" cy="22.3369" r="21.8369" transform="rotate(90 23.1123 22.3369)" stroke="white"/><path d="M28.0273 23.479L23.0627 18.5144L18.0982 23.479" stroke="white"/></svg>');
+    right: 1%;
+    top: 39%;
+    z-index: 999;
+    transform: translateX(-50%) rotate(90deg);
+    -webkit-transform: translateX(-50%) rotate(90deg);
+    -moz-transform: translateX(-50%) rotate(90deg);
+    -ms-transform: translateX(-50%) rotate(90deg);
+    -o-transform: translateX(-50%) rotate(90deg);
+  }
+
+  &__slider-scroll-left {
+    transform: translateX(calc(-100vw));
+    -webkit-transform: translateX(calc(-100vw));
+    -moz-transform: translateX(calc(-100vw));
+    -ms-transform: translateX(calc(-100vw));
+    -o-transform: translateX(calc(-100vw));
+    transition: all 3.7s ease 0.5s;
+    -webkit-transition: all 3.7s ease 0.5s;
+    -moz-transition: all 3.7s ease 0.5s;
+    -ms-transition: all 3.7s ease 0.5s;
+    -o-transition: all 3.7s ease 0.5s;
+  }
+
+  &__slider-scroll-right {
+    transform: translateX(calc(100vw));
+    -webkit-transform: translateX(calc(100vw));
+    -moz-transform: translateX(calc(100vw));
+    -ms-transform: translateX(calc(100vw));
+    -o-transform: translateX(calc(100vw));
+    transition: all 3.5s ease 0.5s;
+    -webkit-transition: all 3.5s ease 0.5s;
+    -moz-transition: all 3.5s ease 0.5s;
+    -ms-transition: all 3.5s ease 0.5s;
+    -o-transition: all 3.5s ease 0.5s;
+  }
+
+  &__slide {
+    transition: transform 2s;
+    -webkit-transition: transform 2s;
+    -moz-transition: transform 2s;
+    -ms-transition: transform 2s;
+    -o-transition: transform 2s;
+}
 
   &__slide-2,
   &__slide-3 {
@@ -515,6 +568,42 @@
     position: relative;
     box-sizing: border-box;
 
+    &__slider-button-left {
+      user-select: none;
+      position: absolute;
+      display: block;
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      left: 4%;
+      top: 24%;
+      z-index: 999;
+      content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="46" height="45" viewBox="0 0 46 45" fill="%231f4b9879"><circle cx="23.1123" cy="22.3369" r="21.8369" transform="rotate(90 23.1123 22.3369)" stroke="%23D8D1B1"/><path d="M28.0273 23.479L23.0627 18.5144L18.0982 23.479" stroke="%23D8D1B1"/></svg>');
+      transform: translateX(-50%) rotate(-90deg) scale(0.5);
+      -webkit-transform: translateX(-50%) rotate(-90deg) scale(0.5);
+      -moz-transform: translateX(-50%) rotate(-90deg) scale(0.5);
+      -ms-transform: translateX(-50%) rotate(-90deg) scale(0.5);
+      -o-transform: translateX(-50%) rotate(-90deg) scale(0.5);
+    }
+
+    &__slider-button-right {
+      user-select: none;
+      position: absolute;
+      display: block;
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="46" height="45" viewBox="0 0 46 45" fill="%231f4b9879"><circle cx="23.1123" cy="22.3369" r="21.8369" transform="rotate(90 23.1123 22.3369)" stroke="%23C2D4D9"/><path d="M28.0273 23.479L23.0627 18.5144L18.0982 23.479" stroke="%23C2D4D9"/></svg>');
+      right: -6%;
+      top: 24%;
+      z-index: 999;
+      transform: translateX(-50%) rotate(90deg) scale(0.5);
+      -webkit-transform: translateX(-50%) rotate(90deg) scale(0.5);
+      -moz-transform: translateX(-50%) rotate(90deg) scale(0.5);
+      -ms-transform: translateX(-50%) rotate(90deg) scale(0.5);
+      -o-transform: translateX(-50%) rotate(90deg) scale(0.5);
+    }
+
     &__slider-scroll-left {
       transform: translateX(-100vw);
       -webkit-transform: translateX(-100vw);
@@ -616,6 +705,42 @@
   @include tablet {
     height: 377px;
     padding: 0 0 0 0;
+
+    &__slider-button-left {
+      user-select: none;
+      position: absolute;
+      display: block;
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      left: 3%;
+      top: 28%;
+      z-index: 999;
+      content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="46" height="45" viewBox="0 0 46 45" fill="none"><circle cx="23.1123" cy="22.3369" r="21.8369" transform="rotate(90 23.1123 22.3369)" stroke="white"/><path d="M28.0273 23.479L23.0627 18.5144L18.0982 23.479" stroke="white"/></svg>');
+      transform: translateX(-50%) rotate(-90deg);
+      -webkit-transform: translateX(-50%) rotate(-90deg);
+      -moz-transform: translateX(-50%) rotate(-90deg);
+      -ms-transform: translateX(-50%) rotate(-90deg);
+      -o-transform: translateX(-50%) rotate(-90deg);
+    }
+
+    &__slider-button-right {
+      user-select: none;
+      position: absolute;
+      display: block;
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="46" height="45" viewBox="0 0 46 45" fill="none"><circle cx="23.1123" cy="22.3369" r="21.8369" transform="rotate(90 23.1123 22.3369)" stroke="white"/><path d="M28.0273 23.479L23.0627 18.5144L18.0982 23.479" stroke="white"/></svg>');
+      right: 1%;
+      top: 28%;
+      z-index: 999;
+      transform: translateX(-50%) rotate(90deg);
+      -webkit-transform: translateX(-50%) rotate(90deg);
+      -moz-transform: translateX(-50%) rotate(90deg);
+      -ms-transform: translateX(-50%) rotate(90deg);
+      -o-transform: translateX(-50%) rotate(90deg);
+    }
 
     &__slider-scroll-left {
       transform: translateX(-100vw);
@@ -1309,6 +1434,23 @@
 .top-products {
   padding-bottom: 88px;
   background-color: rgba(218, 231, 255, 0.29);
+  position: relative;
+
+  &__position-relative {
+    position: relative;
+    &::before {
+      position: absolute;
+      display: block;
+      top: -225px;
+      left: -259px;
+      content: url('/images/flower_pattern_bg.svg');
+      transform: scale(0.78);
+      -webkit-transform: scale(0.78);
+      -moz-transform: scale(0.78);
+      -ms-transform: scale(0.78);
+      -o-transform: scale(0.78);
+    }
+  }
 
   &__second-heading {
     width: 100%;
@@ -1579,6 +1721,22 @@
       padding-bottom: 65px;
     }
 
+    &__position-relative {
+      position: relative;
+      &::before {
+        position: absolute;
+        display: block;
+        top: -211px;
+        left: -201px;
+        content: url('/images/flower_pattern_bg.svg');
+        transform: scale(0.6);
+        -webkit-transform: scale(0.6);
+        -moz-transform: scale(0.6);
+        -ms-transform: scale(0.6);
+        -o-transform: scale(0.6);
+      }
+    }
+
     &__product {
       gap: 10px;
       flex-wrap: wrap;
@@ -1751,8 +1909,21 @@
 
   @include tablet {
     padding-bottom: 128px;
+
     &__position-relative {
       position: relative;
+      &::before {
+        position: absolute;
+        display: block;
+        top: -153px;
+        left: -259px;
+        content: url('/images/flower_pattern_bg.svg');
+        transform: scale(0.78);
+        -webkit-transform: scale(0.78);
+        -moz-transform: scale(0.78);
+        -ms-transform: scale(0.78);
+        -o-transform: scale(0.78);
+      }
     }
 
     &__second-heading {
@@ -2247,6 +2418,22 @@
 .about {
   padding-bottom: 75px;
 
+  & > .fixed-container {
+    position: relative;
+    &::before {
+      position: absolute;
+      display: block;
+      top: -25px;
+      right: -265px;
+      content: url('/images/flower_pattern_bg.svg');
+      transform: scale(1.1);
+      -webkit-transform: scale(1.1);
+      -moz-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+      -o-transform: scale(1.1);
+    }
+  }
+
   &__second-heading_wrapper {
     display: flex;
     justify-content: left;
@@ -2359,6 +2546,23 @@
   @include mobile {
     padding-bottom: 47px;
 
+    & > .fixed-container {
+      position: relative;
+      &::before {
+        position: absolute;
+        display: block;
+        top: -137px;
+        right: -180px;
+        z-index: -1;
+        content: url('/images/flower_pattern_bg.svg');
+        transform: scale(0.6);
+        -webkit-transform: scale(0.6);
+        -moz-transform: scale(0.6);
+        -ms-transform: scale(0.6);
+        -o-transform: scale(0.6);
+      }
+    }
+
     &__second-heading_wrapper {
       margin-bottom: 24px;
       flex-wrap: wrap;
@@ -2432,6 +2636,24 @@
 
   @include tablet {
     padding-bottom: 61px;
+
+    & > .fixed-container {
+      position: relative;
+      &::before {
+        position: absolute;
+        display: block;
+        top: -145px;
+        right: -198px;
+        z-index: -1;
+        content: url('/images/flower_pattern_bg.svg');
+        transform: scale(0.75);
+        -webkit-transform: scale(0.75);
+        -moz-transform: scale(0.75);
+        -ms-transform: scale(0.75);
+        -o-transform: scale(0.75);
+      }
+    }
+
     &__second-heading_wrapper {
       flex-wrap: wrap;
       flex-direction: column;
@@ -2934,6 +3156,23 @@
 .cooperation {
   padding: 83px 0 125px 0;
 
+  & > .fixed-container {
+    position: relative;
+    &::before {
+      position: absolute;
+      display: block;
+      top: 154px;
+      left: -240px;
+      z-index: -1;
+      content: url('/images/flower_pattern_bg.svg');
+      transform: scale(0.95);
+      -webkit-transform: scale(0.95);
+      -moz-transform: scale(0.95);
+      -ms-transform: scale(0.95);
+      -o-transform: scale(0.95);
+    }
+  }
+
   &__cta-button {
     margin-bottom: 84px;
     margin-right: auto;
@@ -3045,6 +3284,23 @@
   @include mobile {
     padding: 36px 0 44px 0;
 
+    & > .fixed-container {
+      position: relative;
+      &::before {
+        position: absolute;
+        display: block;
+        top: -74px;
+        left: -126px;
+        z-index: -1;
+        content: url('/images/flower_pattern_bg.svg');
+        transform: scale(0.6);
+        -webkit-transform: scale(0.6);
+        -moz-transform: scale(0.6);
+        -ms-transform: scale(0.6);
+        -o-transform: scale(0.6);
+      }
+    }
+
     &__cta-button {
       margin-bottom: 65px;
     }
@@ -3125,6 +3381,23 @@
 
   @include tablet {
     padding: 67px 0 108px 0;
+
+    & > .fixed-container {
+      position: relative;
+      &::before {
+        position: absolute;
+        display: block;
+        top: 242px;
+        left: -232px;
+        z-index: -1;
+        content: url('/images/flower_pattern_bg.svg');
+        transform: scale(0.8);
+        -webkit-transform: scale(0.8);
+        -moz-transform: scale(0.8);
+        -ms-transform: scale(0.8);
+        -o-transform: scale(0.8);
+      }
+    }
 
     &__cta-button {
       margin-bottom: 106px;
