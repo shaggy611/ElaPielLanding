@@ -42,8 +42,12 @@
     font-size: 8px;
     padding: 3px 0 4px 0;
 
+    &__contacts p {
+      display: none;
+    }
+
     &__wrapper {
-      justify-content: center;
+      justify-content: space-between;
     }
 
     &__title svg {
@@ -51,7 +55,9 @@
       margin: 0 6px 0 0;
     }
     &__contacts {
-      display: none;
+      & svg {
+        max-width: 12px;
+      }
     }
   }
 
@@ -137,6 +143,7 @@
 
   @include mobile {
     padding: 11px 24px;
+    z-index: 99;
 
     &__wrapper {
       display: none;
@@ -207,15 +214,15 @@
     cursor: pointer;
     width: 40px;
     height: 40px;
-    left: 3%;
-    top: 39%;
+    left: 1%;
+    top: 46%;
     z-index: 999;
     content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="46" height="45" viewBox="0 0 46 45" fill="none"><circle cx="23.1123" cy="22.3369" r="21.8369" transform="rotate(90 23.1123 22.3369)" stroke="white"/><path d="M28.0273 23.479L23.0627 18.5144L18.0982 23.479" stroke="white"/></svg>');
-    transform: translateX(-50%) rotate(-90deg);
-    -webkit-transform: translateX(-50%) rotate(-90deg);
-    -moz-transform: translateX(-50%) rotate(-90deg);
-    -ms-transform: translateX(-50%) rotate(-90deg);
-    -o-transform: translateX(-50%) rotate(-90deg);
+    transform: translateY(-50%) rotate(-90deg);
+    -webkit-transform: translateY(-50%) rotate(-90deg);
+    -moz-transform: translateY(-50%) rotate(-90deg);
+    -ms-transform: translateY(-50%) rotate(-90deg);
+    -o-transform: translateY(-50%) rotate(-90deg);
   }
 
   &__slider-button-right {
@@ -227,13 +234,13 @@
     height: 40px;
     content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="46" height="45" viewBox="0 0 46 45" fill="none"><circle cx="23.1123" cy="22.3369" r="21.8369" transform="rotate(90 23.1123 22.3369)" stroke="white"/><path d="M28.0273 23.479L23.0627 18.5144L18.0982 23.479" stroke="white"/></svg>');
     right: 1%;
-    top: 39%;
+    top: 46%;
     z-index: 999;
-    transform: translateX(-50%) rotate(90deg);
-    -webkit-transform: translateX(-50%) rotate(90deg);
-    -moz-transform: translateX(-50%) rotate(90deg);
-    -ms-transform: translateX(-50%) rotate(90deg);
-    -o-transform: translateX(-50%) rotate(90deg);
+    transform: translateY(-50%) rotate(90deg);
+    -webkit-transform: translateY(-50%) rotate(90deg);
+    -moz-transform: translateY(-50%) rotate(90deg);
+    -ms-transform: translateY(-50%) rotate(90deg);
+    -o-transform: translateY(-50%) rotate(90deg);
   }
 
   &__slider-scroll-left {
@@ -268,7 +275,7 @@
     -moz-transition: transform 2s;
     -ms-transition: transform 2s;
     -o-transition: transform 2s;
-}
+  }
 
   &__slide-2,
   &__slide-3 {
@@ -405,7 +412,7 @@
   &__slide-2_list {
     margin-top: 20px;
     display: flex;
-    margin-bottom: 121px;
+    margin-bottom: 137px;
   }
 
   &__slide-3_list {
@@ -463,7 +470,7 @@
     background: #fff;
     border: none;
     display: block;
-    z-index: 1;
+    z-index: 99;
     cursor: pointer;
     position: relative;
   }
@@ -575,15 +582,15 @@
       cursor: pointer;
       width: 40px;
       height: 40px;
-      left: 4%;
-      top: 24%;
+      left: -1%;
+      top: 50%;
       z-index: 999;
       content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="46" height="45" viewBox="0 0 46 45" fill="%231f4b9879"><circle cx="23.1123" cy="22.3369" r="21.8369" transform="rotate(90 23.1123 22.3369)" stroke="%23D8D1B1"/><path d="M28.0273 23.479L23.0627 18.5144L18.0982 23.479" stroke="%23D8D1B1"/></svg>');
-      transform: translateX(-50%) rotate(-90deg) scale(0.5);
-      -webkit-transform: translateX(-50%) rotate(-90deg) scale(0.5);
-      -moz-transform: translateX(-50%) rotate(-90deg) scale(0.5);
-      -ms-transform: translateX(-50%) rotate(-90deg) scale(0.5);
-      -o-transform: translateX(-50%) rotate(-90deg) scale(0.5);
+      transform: translateY(-50%) rotate(-90deg) scale(0.5);
+      -webkit-transform: translateY(-50%) rotate(-90deg) scale(0.5);
+      -moz-transform: translateY(-50%) rotate(-90deg) scale(0.5);
+      -ms-transform: translateY(-50%) rotate(-90deg) scale(0.5);
+      -o-transform: translateY(-50%) rotate(-90deg) scale(0.5);
     }
 
     &__slider-button-right {
@@ -594,14 +601,14 @@
       width: 40px;
       height: 40px;
       content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="46" height="45" viewBox="0 0 46 45" fill="%231f4b9879"><circle cx="23.1123" cy="22.3369" r="21.8369" transform="rotate(90 23.1123 22.3369)" stroke="%23C2D4D9"/><path d="M28.0273 23.479L23.0627 18.5144L18.0982 23.479" stroke="%23C2D4D9"/></svg>');
-      right: -6%;
-      top: 24%;
+      right: -1%;
+      top: 50%;
       z-index: 999;
-      transform: translateX(-50%) rotate(90deg) scale(0.5);
-      -webkit-transform: translateX(-50%) rotate(90deg) scale(0.5);
-      -moz-transform: translateX(-50%) rotate(90deg) scale(0.5);
-      -ms-transform: translateX(-50%) rotate(90deg) scale(0.5);
-      -o-transform: translateX(-50%) rotate(90deg) scale(0.5);
+      transform: translateY(-50%) rotate(90deg) scale(0.5);
+      -webkit-transform: translateY(-50%) rotate(90deg) scale(0.5);
+      -moz-transform: translateY(-50%) rotate(90deg) scale(0.5);
+      -ms-transform: translateY(-50%) rotate(90deg) scale(0.5);
+      -o-transform: translateY(-50%) rotate(90deg) scale(0.5);
     }
 
     &__slider-scroll-left {
@@ -713,15 +720,15 @@
       cursor: pointer;
       width: 40px;
       height: 40px;
-      left: 3%;
-      top: 28%;
+      left: 0;
+      top: 50%;
       z-index: 999;
       content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="46" height="45" viewBox="0 0 46 45" fill="none"><circle cx="23.1123" cy="22.3369" r="21.8369" transform="rotate(90 23.1123 22.3369)" stroke="white"/><path d="M28.0273 23.479L23.0627 18.5144L18.0982 23.479" stroke="white"/></svg>');
-      transform: translateX(-50%) rotate(-90deg);
-      -webkit-transform: translateX(-50%) rotate(-90deg);
-      -moz-transform: translateX(-50%) rotate(-90deg);
-      -ms-transform: translateX(-50%) rotate(-90deg);
-      -o-transform: translateX(-50%) rotate(-90deg);
+      transform: translateY(-50%) rotate(-90deg) scale(0.6);
+      -webkit-transform: translateY(-50%) rotate(-90deg) scale(0.6);
+      -moz-transform: translateY(-50%) rotate(-90deg) scale(0.6);
+      -ms-transform: translateY(-50%) rotate(-90deg) scale(0.6);
+      -o-transform: translateY(-50%) rotate(-90deg) scale(0.6);
     }
 
     &__slider-button-right {
@@ -732,14 +739,22 @@
       width: 40px;
       height: 40px;
       content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="46" height="45" viewBox="0 0 46 45" fill="none"><circle cx="23.1123" cy="22.3369" r="21.8369" transform="rotate(90 23.1123 22.3369)" stroke="white"/><path d="M28.0273 23.479L23.0627 18.5144L18.0982 23.479" stroke="white"/></svg>');
-      right: 1%;
-      top: 28%;
+      right: 0;
+      top: 50%;
       z-index: 999;
-      transform: translateX(-50%) rotate(90deg);
-      -webkit-transform: translateX(-50%) rotate(90deg);
-      -moz-transform: translateX(-50%) rotate(90deg);
-      -ms-transform: translateX(-50%) rotate(90deg);
-      -o-transform: translateX(-50%) rotate(90deg);
+      transform: translateY(-50%) rotate(90deg) scale(0.6);
+      -webkit-transform: translateY(-50%) rotate(90deg) scale(0.6);
+      -moz-transform: translateY(-50%) rotate(90deg) scale(0.6);
+      -ms-transform: translateY(-50%) rotate(90deg) scale(0.6);
+      -o-transform: translateY(-50%) rotate(90deg) scale(0.6);
+    }
+
+    .g {
+      transform: translateY(-50%) rotate(90deg) scale(0.6);
+      -webkit-transform: translateY(-50%) rotate(90deg) scale(0.6);
+      -moz-transform: translateY(-50%) rotate(90deg) scale(0.6);
+      -ms-transform: translateY(-50%) rotate(90deg) scale(0.6);
+      -o-transform: translateY(-50%) rotate(90deg) scale(0.6);
     }
 
     &__slider-scroll-left {
@@ -954,7 +969,7 @@
 
       border: none;
       display: block;
-      z-index: 1;
+      z-index: 99;
       cursor: pointer;
       position: relative;
     }
@@ -988,11 +1003,11 @@
         max-width: 400px;
         z-index: 1;
         display: block;
-        transform: translate(93px, -276px);
-        -webkit-transform: translate(93px, -276px);
-        -moz-transform: translate(93px, -276px);
-        -ms-transform: translate(93px, -276px);
-        -o-transform: translate(93px, -276px);
+        transform: translate(93px, -284px);
+        -webkit-transform: translate(93px, -284px);
+        -moz-transform: translate(93px, -284px);
+        -ms-transform: translate(93px, -284px);
+        -o-transform: translate(93px, -284px);
       }
     }
 
@@ -1090,7 +1105,7 @@
     &__slide-2_list {
       margin-top: 9px;
       display: flex;
-      margin-bottom: 20px;
+      margin-bottom: 32px;
       flex-direction: column;
     }
 
@@ -1126,7 +1141,7 @@
 
       border: none;
       display: block;
-      z-index: 1;
+      z-index: 99;
       cursor: pointer;
       position: relative;
     }
@@ -1286,7 +1301,7 @@
   }
 
   @include mobile {
-    padding: 35px 0;
+    padding: 37px 0;
 
     &__subtext {
       margin-bottom: 15px;
@@ -1718,7 +1733,7 @@
     padding-bottom: 20px;
 
     &__second-heading {
-      padding-bottom: 65px;
+      padding-bottom: 37px;
     }
 
     &__position-relative {
@@ -1726,14 +1741,14 @@
       &::before {
         position: absolute;
         display: block;
-        top: -211px;
-        left: -201px;
+        top: -198px;
+        left: -209px;
         content: url('/images/flower_pattern_bg.svg');
-        transform: scale(0.6);
-        -webkit-transform: scale(0.6);
-        -moz-transform: scale(0.6);
-        -ms-transform: scale(0.6);
-        -o-transform: scale(0.6);
+        transform: scale(0.55);
+        -webkit-transform: scale(0.55);
+        -moz-transform: scale(0.55);
+        -ms-transform: scale(0.55);
+        -o-transform: scale(0.55);
       }
     }
 
@@ -2151,6 +2166,13 @@
     }
   }
 
+  &__step-item-title {
+    &::after {
+      margin-left: 20px;
+      content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="19" viewBox="0 0 12 19" fill="none"><path d="M1.44336 17.887L9.88689 9.44344L1.44336 0.99991" stroke="%231f4b98" stroke-width="2"/></svg>');
+    }
+  }
+
   &__step-item--hovered &__step-item-title {
     color: #e4d9c6;
     transform: translateY(-30px);
@@ -2158,6 +2180,11 @@
     -moz-transform: translateY(-30px);
     -ms-transform: translateY(-30px);
     -o-transform: translateY(-30px);
+
+    &::after {
+      margin-left: 20px;
+      content: '';
+    }
   }
 
   &__step-item--hovered &__step-item-subtitle {
@@ -2266,6 +2293,15 @@
       margin-bottom: 40px;
     }
 
+    &__step-item-title {
+      &::after {
+        margin-left: 20px;
+        display: inline-flex;
+        vertical-align: middle;
+        content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="21" viewBox="0 0 12 19" fill="none"><path d="M1.44336 17.887L9.88689 9.44344L1.44336 0.99991" stroke="%231f4b98" stroke-width="2"/></svg>');
+      }
+    }
+
     &__second-heading {
       padding-bottom: 37px;
       max-width: 200px;
@@ -2348,6 +2384,15 @@
 
     &__cta-button {
       margin-bottom: 54px;
+    }
+
+    &__step-item-title {
+      &::after {
+        margin-left: 20px;
+        display: inline-flex;
+        vertical-align: middle;
+        content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="21" viewBox="0 0 12 19" fill="none"><path d="M1.44336 17.887L9.88689 9.44344L1.44336 0.99991" stroke="%231f4b98" stroke-width="2"/></svg>');
+      }
     }
 
     &__second-heading {
@@ -2759,8 +2804,8 @@
     display: block;
     content: url('/images/eu_flag.jpg');
     margin: 0 7px;
-    animation: flag 2s cubic-bezier(0.5, 1, 0.89, 1) infinite;
-    -webkit-animation: flag 2s cubic-bezier(0.5, 1, 0.89, 1) infinite;
+    animation: flag 3s cubic-bezier(0.5, 1, 0.89, 1) infinite;
+    -webkit-animation: flag 3s cubic-bezier(0.5, 1, 0.89, 1) infinite;
     animation-delay: 1s;
   }
 
@@ -2807,7 +2852,7 @@
     }
 
     &__second-heading {
-      margin-bottom: 29px;
+      margin-bottom: 40px;
       letter-spacing: 1px;
     }
 
@@ -3000,8 +3045,8 @@
   }
 
   &__values_list-item--animate {
-    animation: scale 1s forwards cubic-bezier(0.5, 1, 0.89, 1);
-    -webkit-animation: scale 1s forwards cubic-bezier(0.5, 1, 0.89, 1);
+    animation: scale 2s forwards cubic-bezier(0.5, 1, 0.89, 1);
+    -webkit-animation: scale 2s forwards cubic-bezier(0.5, 1, 0.89, 1);
   }
 
   &__values_list {
@@ -3010,11 +3055,11 @@
     }
 
     & > div:nth-child(2) {
-      animation-delay: 0.7s;
+      animation-delay: 0.9s;
     }
 
     & > div:nth-child(3) {
-      animation-delay: 1s;
+      animation-delay: 1.4s;
     }
   }
 
@@ -3275,6 +3320,10 @@
     }
   }
 
+  &__content__list-item--hovered {
+    border: 1px solid #1f4b98;
+  }
+
   &__list-item-cta {
     margin-top: 35px;
     max-width: 428px;
@@ -3363,6 +3412,10 @@
       height: 60px;
       margin-bottom: 4px;
       max-width: 273px;
+
+      &:focus {
+        border: 1px solid #1f4b98;
+      }
 
       & button {
         font-size: 17px;
@@ -3791,7 +3844,7 @@
 
     &__steps-wrapper {
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       flex-wrap: wrap;
       margin-left: 25px;
     }
@@ -4063,6 +4116,7 @@
     font-weight: 300;
     line-height: normal;
     margin: 0;
+    height: 22px;
   }
 
   &__contacts_item:last-child {
@@ -4241,6 +4295,7 @@
     &__contacts_text {
       font-size: 15px;
       margin: 0;
+      height: 18px;
     }
 
     &__copyright-text {
@@ -4343,11 +4398,19 @@
     &__text-wrapper {
       max-width: 375px;
     }
+
+    &__heading {
+      line-height: 28px;
+    }
   }
 
   @include tablet {
     &__text-wrapper {
       max-width: 700px !important;
+    }
+
+    &__heading {
+      line-height: 28px;
     }
   }
 }
@@ -4361,11 +4424,15 @@
   position: absolute;
   right: -100vw;
   top: 75px;
-  z-index: 999;
+  z-index: 9999;
   flex-direction: column;
   align-items: center;
   display: none;
   overflow: hidden !important;
+
+  &__instagram-link {
+    display: none;
+  }
 
   &__wrapper {
     list-style: none;

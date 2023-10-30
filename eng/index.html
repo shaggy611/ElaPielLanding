@@ -48,14 +48,14 @@
 
         <nav class="navigation fixed-container">
             <div class="navigation__logo">
-                <a href="/" rel="noopener noreferrer">
+                <a href="/eng/index.html" rel="noopener noreferrer">
                     <img src="/images/logo.svg" alt="Logo">
                 </a>
             </div>
 
             <ul class="navigation__wrapper">
                 <li class="navigation__item"><a href="#top-products">Product</a></li>
-                <li class="navigation__item"><a href="#five-steps">How to buy</a></li>
+                <li class="navigation__item"><a href="#cooperation">How to buy</a></li>
                 <li class="navigation__item"><a href="#about">About the brand</a></li>
                 <li class="navigation__item"><a href="#partnership">Become a partner</a></li>
                 <li class="navigation__item"><a href="#contacts">Contacts</a></li>
@@ -90,7 +90,7 @@
                     <ul class="mobile-menu__wrapper">
                         <li class="mobile-menu__item"><a class="mobile-menu__item_link" href="#top-products">Product</a>
                         </li>
-                        <li class="mobile-menu__item"><a class="mobile-menu__item_link" href="#five-steps">How to
+                        <li class="mobile-menu__item"><a class="mobile-menu__item_link" href="#cooperation">How to
                                 buy</a>
                         </li>
                         <li class="mobile-menu__item"><a class="mobile-menu__item_link" href="#about">About the
@@ -117,8 +117,8 @@
                     </a>
 
                     <div class="mobile-menu__language-changer">
-                        <a class="mobile-menu__language-changer_ua active" href="#">UA</a>
-                        <a class="mobile-menu__language-changer_eng" href="#">ENG</a>
+                        <a class="mobile-menu__language-changer_ua" href="#">UA</a>
+                        <a class="mobile-menu__language-changer_eng active" href="#">ENG</a>
                     </div>
 
                     <p class="mobile-menu__text">Official representative in Ukraine: +38 093 762 77 51</p>
@@ -128,10 +128,10 @@
     </header>
 
     <main>
-        <div class="welcome-screen__slider-button-left"></div>
-        <div class="welcome-screen__slider-button-right"></div>
         <section id="welcome-screen" class="welcome-screen">
-            <div class="welcome-screen__slide-1">
+            <div class="welcome-screen__slider-button-left"></div>
+            <div class="welcome-screen__slider-button-right"></div>
+            <div class="welcome-screen__slide-1 welcome-screen__slide">
                 <div class="welcome-screen__video-bg">
                     <video id="video_bg" playsinline autoplay muted loop poster="">
                         <source src="/images/water_wave.mp4" type="video/mp4">
@@ -154,7 +154,7 @@
                 </div>
             </div>
 
-            <div class="welcome-screen__slide-2">
+            <div class="welcome-screen__slide-2 welcome-screen__slide">
                 <div class="welcome-screen__slide-2_wrapper fixed-container">
                     <div class="welcome-screen__slide-2_content">
                         <div class="welcome-screen__slide-2_heading">GL PEPTIDE PEEL</div>
@@ -226,7 +226,7 @@
                 </div>
             </div>
 
-            <div class="welcome-screen__slide-3">
+            <div class="welcome-screen__slide-3 welcome-screen__slide">
                 <div class="welcome-screen__slide-3_wrapper fixed-container">
                     <div class="welcome-screen__slide-3_content">
                         <div class="welcome-screen__slide-3_heading">MANDELIC PHYTO PEEL</div>
@@ -1016,17 +1016,26 @@
                     <div class="cooperation__content__list-wrapper">
                         <p class="cooperation__content__list-title">We invite you to cooperate:</p>
                         <div class="cooperation__content__list">
-                            <div class="cooperation__content__list-item open-modal-js">
-                                <button class="open-modal-js" type="button">Beauty salons</button>
+                            <div class="cooperation__content__list-item open-modal-js"
+                                data-name="modal-screen__input-activity_beauty-salon">
+                                <button class="open-modal-js" type="button"
+                                    data-name="modal-screen__input-activity_beauty-salon">Beauty salons</button>
                             </div>
-                            <div class="cooperation__content__list-item open-modal-js">
-                                <button class="open-modal-js" type="button">Private cosmetologists</button>
+                            <div class="cooperation__content__list-item open-modal-js"
+                                data-name="modal-screen__input-activity_beautician">
+                                <button class="open-modal-js" type="button"
+                                    data-name="modal-screen__input-activity_beautician">Private cosmetologists</button>
                             </div>
-                            <div class="cooperation__content__list-item open-modal-js">
-                                <button class="open-modal-js" type="button">Clinics of aesthetic medicine</button>
+                            <div class="cooperation__content__list-item open-modal-js"
+                                data-name="modal-screen__input-activity_aesthetic-clinic">
+                                <button class="open-modal-js" type="button"
+                                    data-name="modal-screen__input-activity_aesthetic-clinic">Clinics of aesthetic
+                                    medicine</button>
                             </div>
-                            <div class="cooperation__content__list-item open-modal-js">
-                                <button class="open-modal-js" type="button">WHOLESALE and retail SALES</button>
+                            <div class="cooperation__content__list-item open-modal-js"
+                                data-name="modal-screen__input-activity_trading">
+                                <button class="open-modal-js" type="button"
+                                    data-name="modal-screen__input-activity_trading">WHOLESALE and retail SALES</button>
                             </div>
                             <a class="cooperation__list-item-cta basic-button open-modal-js">How to become a partner</a>
                         </div>
@@ -1190,6 +1199,7 @@
                     <p class="footer__contacts_text">Kyiv, Sof. Borshchagivka.</p>
                     <p class="footer__contacts_text">St. Byshivska 1</p>
                     <br>
+                    <p class="footer__contacts_text"> </p>
                     <p class="footer__contacts_text">Tel. + 3 8093 762 77 51</p>
                     <p class="footer__contacts_text">E-mail: mail@elapielpro.com</p>
                 </div>

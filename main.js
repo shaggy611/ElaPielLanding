@@ -47,6 +47,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const partnershipSection = document.querySelector('.partnership')
     const fiveStepsSection = document.querySelector('.five-steps__scroll-spy-js')
     const sliderBlocks = document.querySelectorAll('.welcome-screen__slide')
+    const cooperationItems = document.querySelectorAll('.cooperation__content__list-item')
+    let modalDataAttribut
     let currentIndex = 0;
     let interval
     let scrollPosition
@@ -92,6 +94,24 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.style.setProperty('overflow-y', 'scroll')
             menuToggler.checked = false
         }
+    })
+
+    cooperationItems.forEach(item => {
+        item.addEventListener('click', function (event) {
+            cooperationItems.forEach(item => {
+                item.classList.remove('cooperation__content__list-item--hovered')
+            })
+            if (event.target.parentNode.classList.contains('cooperation__content__list-item')) {
+                event.target.parentNode.classList.add('cooperation__content__list-item--hovered')
+            } else {
+                event.target.classList.add('cooperation__content__list-item--hovered')
+            }
+            // cooperationItems.forEach(i => {
+            //     if (!(i.classList.parentNode.contains('cooperation__content__list-item--hovered'))) {
+            //         i.classList.parentNode.remove('cooperation__content__list-item--hovered')
+            //     }
+            // })
+        })
     })
 
     if (fiveStepsSection || aboutSection || partnershipSection) {
@@ -168,45 +188,59 @@ document.addEventListener('DOMContentLoaded', () => {
 
         modal.addEventListener('change', function (event) {
             if (event.target.classList.contains('modal-screen__input-activity_checkbox-js')) {
-
-                activityCheckBoxes.forEach(function (otherCheckbox) {
-                    if (otherCheckbox !== event.target) {
-                        otherCheckbox.checked = false;
-                    }
-
-                });
-
-                if (event.target.id === 'modal-screen__input-activity_beautician') {
-                    inputSubmition.disabled = false
-                    fileInputCheck.disabled = false
-
-                    inputSubmition.parentNode.classList.add('enabled')
-                    fileInputCheck.parentNode.classList.add('enabled')
-
-                    inputSubmition.parentNode.classList.remove('disabled')
-                    fileInputCheck.parentNode.classList.remove('disabled')
-                } else {
-                    inputSubmition.disabled = true
-                    fileInputCheck.disabled = true
-
-                    inputSubmition.parentNode.classList.add('disabled')
-                    fileInputCheck.parentNode.classList.add('disabled')
-
-                    inputSubmition.parentNode.classList.remove('enabled')
-                    fileInputCheck.parentNode.classList.remove('enabled')
-                }
-
-                event.target.checked = true;
-                let choosenParameter = event.target.parentNode
-                modalDopDownList.insertBefore(choosenParameter, modalDopDownList.firstChild)
-                modalDopDownList.classList.toggle('modal-screen__input-activity--opened')
-                modalDopDownListTitle.style.display = 'none'
+                modalCheckBoxCheck(event.target)
             }
         })
     }
 
+    function modalCheckBoxCheck(element) {
+        activityCheckBoxes.forEach(function (otherCheckbox) {
+            if (otherCheckbox !== element) {
+                otherCheckbox.checked = false;
+            }
+
+        });
+
+        if (element.id === 'modal-screen__input-activity_beautician') {
+            inputSubmition.disabled = false
+            fileInputCheck.disabled = false
+
+            inputSubmition.parentNode.classList.add('enabled')
+            fileInputCheck.parentNode.classList.add('enabled')
+
+            inputSubmition.parentNode.classList.remove('disabled')
+            fileInputCheck.parentNode.classList.remove('disabled')
+        } else {
+            inputSubmition.disabled = true
+            fileInputCheck.disabled = true
+
+            inputSubmition.parentNode.classList.add('disabled')
+            fileInputCheck.parentNode.classList.add('disabled')
+
+            inputSubmition.parentNode.classList.remove('enabled')
+            fileInputCheck.parentNode.classList.remove('enabled')
+        }
+
+        element.checked = true;
+        let choosenParameter = element.parentNode
+        modalDopDownList.insertBefore(choosenParameter, modalDopDownList.firstChild)
+        modalDopDownList.classList.toggle('modal-screen__input-activity--opened')
+        modalDopDownListTitle.style.display = 'none'
+    }
+
     function addLIstenersforModalButton(event = undefined) {
         if (event && event.target.classList.contains('open-modal-js')) {
+            if (event.target.dataset.name) {
+                let checkedBeforeModal = document.querySelector(`#${event.target.dataset.name}`)
+
+                activityCheckBoxes.forEach(function (otherCheckbox) {
+                    if (otherCheckbox !== checkedBeforeModal) {
+                        otherCheckbox.checked = false;
+                    }
+                });
+                modalCheckBoxCheck(checkedBeforeModal)
+                modalDopDownList.classList.remove('modal-screen__input-activity--opened')
+            }
             modalScreen.style.display = 'block'
             modal.style.display = 'block'
             document.body.style.setProperty('overflow', 'hidden')
@@ -240,33 +274,6 @@ document.addEventListener('DOMContentLoaded', () => {
             slider.classList.remove('welcome-screen__slider-scroll-left')
         }, 3600)
     }
-
-    // function mainScreenSliderLeft() {
-    //     let lastSliderChild = slider.lastElementChild
-    //     // let firstSliderChild = slider.firstElementChild
-    //     // lastSliderChild.classList.add('appear-slide-click')
-    //     // lastSliderChild.style.transition = 'opacity 2s'
-    //     // lastSliderChild.style.opacity = 1
-
-
-    //     slider.insertBefore(lastSliderChild, slider.firstChild)
-
-    // }
-
-    // function mainScreenSliderRight() {
-    //     let firstSliderChild = slider.firstElementChild
-    //     slider.classList.add('appear-slide-click')
-    //     slider.insertBefore(firstSliderChild, slider.lastElementChild.nextSibling)
-    //     firstSliderChild.style.opacity = 1
-
-    //     // firstSliderChild.classList.remove('appear-slide-click')
-    //     // firstSliderChild.style.opacity = 0
-    //     // firstSliderChild.style.transition = ''
-    //     // firstSliderChild.nextElementSibling.classList.add('appear-slide-click')
-    //     // firstSliderChild.nextElementSibling.style.opacity = 1
-    //     // firstSliderChild.nextElementSibling.style.transition = 'opacity 2s'
-    //     // slider.classList.add('welcome-screen__slider-scroll-left')
-    // }
 
     formData.addEventListener('submit', function (event) {
         event.preventDefault()
@@ -324,7 +331,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             console.log(sendData)
             closeModalPopUp(event)
-            window.location.href = telegramChannelLink;
+            // window.location.href = telegramChannelLink;
         }
 
         else if (nameSurname && email && phone && city && activity === 'Косметолог' && docFile) {
@@ -337,7 +344,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             console.log(sendData)
             closeModalPopUp(event)
-            window.location.href = telegramChannelLink;
+            // window.location.href = telegramChannelLink;
         }
 
         else {
