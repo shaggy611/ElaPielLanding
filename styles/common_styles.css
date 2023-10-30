@@ -245,6 +245,7 @@ a {
 .modal-screen__input-activity-heading {
   display: block;
   display: flex;
+  display: -webkit-flex;
   justify-content: space-between;
   margin-bottom: 22px;
 }
