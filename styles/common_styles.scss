@@ -3,8 +3,8 @@
 body {
   font-family: 'Exo 2';
   overflow-x: hidden;
-  touch-action: none;
-  -ms-touch-action: none;
+  touch-action: cross-slide-y;
+  -ms-touch-action: cross-slide-y;
   // position: relative;
 }
 
