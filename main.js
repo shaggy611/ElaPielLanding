@@ -68,8 +68,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                video.play();
-                observer.unobserve(entry.target);
+                video.play(); // Відтворити відео, коли воно видно
+                observer.unobserve(entry.target); // Припинити спостереження
             }
         });
     }, options);
@@ -84,15 +84,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     menuToggler.addEventListener('click', function () {
         if (menuToggler.checked) {
-            appWrapper.style.setProperty('overflow', 'hidden')
+            document.body.style.setProperty('overflow', 'hidden')
+            document.html.style.setProperty('overflow', 'hidden')
         } else {
-            appWrapper.style.setProperty('overflow-y', 'scroll')
+            document.body.style.setProperty('overflow-y', 'scroll')
+            document.html.style.setProperty('overflow-y', 'scroll')
         }
     })
 
     mobileMenu.addEventListener('click', function (event) {
         if (event.target.classList.contains('mobile-menu__item_link')) {
-            appWrapper.style.setProperty('overflow-y', 'scroll')
+            document.body.style.setProperty('overflow-y', 'scroll')
+            document.html.style.setProperty('overflow-y', 'scroll')
             menuToggler.checked = false
         }
     })
@@ -244,7 +247,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             modalScreen.style.display = 'block'
             modal.style.display = 'block'
-            appWrapper.style.setProperty('overflow', 'hidden')
+            document.body.style.setProperty('overflow', 'hidden')
+            document.html.style.setProperty('overflow', 'hidden')
         } else {
             return
         }
@@ -254,7 +258,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (event.target.classList.contains('modal-screen__button-close-svg') || event.target.classList.contains('modal-screen') || event.target.classList.contains('pop-up-form-js')) {
             modalScreen.style.display = 'none'
             modal.style.display = 'none'
-            appWrapper.style.setProperty('overflow-y', 'scroll')
+            document.body.style.setProperty('overflow-y', 'scroll')
+            document.html.style.setProperty('overflow-y', 'scroll')
         }
     }
 
