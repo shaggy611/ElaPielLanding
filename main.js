@@ -180,6 +180,32 @@ document.addEventListener('DOMContentLoaded', () => {
             slider.classList.remove('welcome-screen__slider-scroll-left')
             mainScreenSliderRight()
         })
+
+        let startPosition = 0
+        let deltaX = 0
+
+        slider.addEventListener('touchstart', (e) => {
+            startPosition = e.touches[0].clientX;
+        });
+
+        slider.addEventListener('touchmove', (e) => {
+            const currentPosition = e.touches[0].clientX;
+            deltaX = startPosition - currentPosition;
+        });
+
+        slider.addEventListener('touchend', (e) => {
+            if (deltaX > 50) {
+                clearInterval(interval)
+                slider.classList.remove('welcome-screen__slider-scroll-left')
+                mainScreenSliderRight()
+                deltaX = 0;
+            } else if (deltaX < -50) {
+                clearInterval(interval)
+                slider.classList.remove('welcome-screen__slider-scroll-left')
+                mainScreenSliderLeft()
+                deltaX = 0
+            }
+        })
     }
 
     if (modal) {
