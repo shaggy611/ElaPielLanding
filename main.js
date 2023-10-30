@@ -85,17 +85,17 @@ document.addEventListener('DOMContentLoaded', () => {
     menuToggler.addEventListener('click', function () {
         if (menuToggler.checked) {
             document.body.style.setProperty('overflow', 'hidden')
-            document.html.style.setProperty('overflow', 'hidden')
+            document.documentElement.style.setProperty('overflow', 'hidden')
         } else {
             document.body.style.setProperty('overflow-y', 'scroll')
-            document.html.style.setProperty('overflow-y', 'scroll')
+            document.documentElement.style.setProperty('overflow-y', 'scroll')
         }
     })
 
     mobileMenu.addEventListener('click', function (event) {
         if (event.target.classList.contains('mobile-menu__item_link')) {
             document.body.style.setProperty('overflow-y', 'scroll')
-            document.html.style.setProperty('overflow-y', 'scroll')
+            document.documentElement.style.setProperty('overflow-y', 'scroll')
             menuToggler.checked = false
         }
     })
@@ -248,7 +248,7 @@ document.addEventListener('DOMContentLoaded', () => {
             modalScreen.style.display = 'block'
             modal.style.display = 'block'
             document.body.style.setProperty('overflow', 'hidden')
-            document.html.style.setProperty('overflow', 'hidden')
+            document.documentElement.style.setProperty('overflow', 'hidden')
         } else {
             return
         }
@@ -259,7 +259,7 @@ document.addEventListener('DOMContentLoaded', () => {
             modalScreen.style.display = 'none'
             modal.style.display = 'none'
             document.body.style.setProperty('overflow-y', 'scroll')
-            document.html.style.setProperty('overflow-y', 'scroll')
+            document.documentElement.style.setProperty('overflow-y', 'scroll')
         }
     }
 
