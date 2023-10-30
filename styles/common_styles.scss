@@ -6,6 +6,10 @@ body {
   // position: relative;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 .app-wrapper {
   overflow-x: hidden;
   width: 100%;
