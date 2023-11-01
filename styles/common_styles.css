@@ -593,20 +593,20 @@ a {
 .messenger .telegram.telegram-show {
   top: -120px;
   opacity: 1;
-  transition: all 1s ease 0.1s;
-  -webkit-transition: all 1s ease 0.1s;
-  -moz-transition: all 1s ease 0.1s;
-  -ms-transition: all 1s ease 0.1s;
-  -o-transition: all 1s ease 0.1s;
+  transition: all 0.4s ease 0.1s;
+  -webkit-transition: all 0.4s ease 0.1s;
+  -moz-transition: all 0.4s ease 0.1s;
+  -ms-transition: all 0.4s ease 0.1s;
+  -o-transition: all 0.4s ease 0.1s;
 }
 .messenger .viber.viber-show {
   top: -60px;
   opacity: 1;
-  transition: all 1s ease;
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -ms-transition: all 1s ease;
-  -o-transition: all 1s ease;
+  transition: all 0.4s ease;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
 }
 @keyframes pulse {
   70% {
