@@ -117,9 +117,10 @@ a {
     padding: 0 24px;
     max-width: 767px;
     box-sizing: border-box;
+    width: 100%;
   }
   .small-bage {
-    font-size: 14px;
+    font-size: 0.875rem;
     padding: 5px 15px;
     max-height: 27px;
   }
@@ -127,7 +128,7 @@ a {
     width: 17px;
   }
   .second-heading {
-    font-size: 20px;
+    font-size: 1.25rem;
   }
   .mobile-hide {
     display: none;
@@ -138,7 +139,7 @@ a {
   .basic-button {
     max-width: 272px;
     padding: 25px 16px;
-    font-size: 16px;
+    font-size: 1rem;
   }
 }
 @media (min-width: 768px) and (max-width: 1217px) {
