@@ -568,6 +568,9 @@ a {
   right: 15px;
   bottom: 15px;
   z-index: 100;
+  opacity: 0;
+  animation: appearMessageBtn 1s ease-in 0.5s forwards;
+  -webkit-animation: appearMessageBtn 1s ease-in 0.5s forwards;
 
   & .call-chat-wrapper {
     background-color: #5089ec8e;
@@ -721,6 +724,41 @@ a {
       -moz-transform: rotate(180deg);
       -ms-transform: rotate(180deg);
       -o-transform: rotate(180deg);
+    }
+  }
+
+  @keyframes appearMessageBtn {
+    0% {
+      opacity: 0;
+      transform: translateX(200px);
+      -webkit-transform: translateX(200px);
+      -moz-transform: translateX(200px);
+      -ms-transform: translateX(200px);
+      -o-transform: translateX(200px);
+    }
+    80% {
+      opacity: 0.8;
+      transform: translateX(-10px);
+      -webkit-transform: translateX(-10px);
+      -moz-transform: translateX(-10px);
+      -ms-transform: translateX(-10px);
+      -o-transform: translateX(-10px);
+    }
+    90% {
+      opacity: 0.9;
+      transform: translateX(5px);
+      -webkit-transform: translateX(5px);
+      -moz-transform: translateX(5px);
+      -ms-transform: translateX(5px);
+      -o-transform: translateX(5px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+      -webkit-transform: translateX(0);
+      -moz-transform: translateX(0);
+      -ms-transform: translateX(0);
+      -o-transform: translateX(0);
     }
   }
 
