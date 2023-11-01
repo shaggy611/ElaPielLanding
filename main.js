@@ -49,6 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const fiveStepsSection = document.querySelector('.five-steps__scroll-spy-js')
     const sliderBlocks = document.querySelectorAll('.welcome-screen__slide')
     const cooperationItems = document.querySelectorAll('.cooperation__content__list-item')
+    const callChat = document.querySelector('.call-chat')
     let modalDataAttribut
     let currentIndex = 0;
     let interval
@@ -59,6 +60,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     globalEventListener.addEventListener('click', addLIstenersforModalButton)
 
+    callChat.addEventListener('click', function () {
+        document.querySelector('.messenger-backdrop').classList.toggle('active')
+        callChat.classList.toggle('call-chat-clicked')
+        document.querySelector('.viber').classList.toggle('viber-show')
+        document.querySelector('.telegram').classList.toggle('telegram-show')
+        document.querySelector('.call-chat-wrapper').classList.toggle('call-chat-wrapper-animate')
+    })
+
     const options = {
         root: slider,
         rootMargin: '0px',
@@ -68,8 +77,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                video.play(); // Відтворити відео, коли воно видно
-                observer.unobserve(entry.target); // Припинити спостереження
+                video.play();
+                observer.unobserve(entry.target);
             }
         });
     }, options);
@@ -110,11 +119,6 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 event.target.classList.add('cooperation__content__list-item--hovered')
             }
-            // cooperationItems.forEach(i => {
-            //     if (!(i.classList.parentNode.contains('cooperation__content__list-item--hovered'))) {
-            //         i.classList.parentNode.remove('cooperation__content__list-item--hovered')
-            //     }
-            // })
         })
     })
 
