@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
             aboutSectionPosition = aboutSection.offsetTop
             partnersiptItemsPosition = partnershipSection.offsetTop
 
-            if (scrollPosition >= (targetPosition - 350)) {
+            if (scrollPosition >= (targetPosition - 450)) {
                 fiveStepsSection.classList.add('activate-animation')
             }
 
@@ -364,8 +364,6 @@ document.addEventListener('DOMContentLoaded', () => {
             sendData.city = city
             sendData.docFile = docFile
             sendData.activity = activity
-
-            console.log(sendData)
             closeModalPopUp(event)
             // window.location.href = telegramChannelLink;
         }
@@ -377,8 +375,6 @@ document.addEventListener('DOMContentLoaded', () => {
             sendData.city = city
             sendData.docFile = docFile
             sendData.activity = activity
-
-            console.log(sendData)
             closeModalPopUp(event)
             // window.location.href = telegramChannelLink;
         }

@@ -176,7 +176,7 @@ a {
           backdrop-filter: blur(4.5px);
   top: 0;
   left: 0;
-  z-index: 998;
+  z-index: 999;
   display: none;
 }
 .modal-screen__modal-alert {

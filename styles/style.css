@@ -176,7 +176,7 @@ a {
           backdrop-filter: blur(4.5px);
   top: 0;
   left: 0;
-  z-index: 998;
+  z-index: 999;
   display: none;
 }
 .modal-screen__modal-alert {
@@ -593,20 +593,20 @@ a {
 .messenger .telegram.telegram-show {
   top: -120px;
   opacity: 1;
-  transition: all 1s ease 0.1s;
-  -webkit-transition: all 1s ease 0.1s;
-  -moz-transition: all 1s ease 0.1s;
-  -ms-transition: all 1s ease 0.1s;
-  -o-transition: all 1s ease 0.1s;
+  transition: all 0.4s ease 0.1s;
+  -webkit-transition: all 0.4s ease 0.1s;
+  -moz-transition: all 0.4s ease 0.1s;
+  -ms-transition: all 0.4s ease 0.1s;
+  -o-transition: all 0.4s ease 0.1s;
 }
 .messenger .viber.viber-show {
   top: -60px;
   opacity: 1;
-  transition: all 1s ease;
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -ms-transition: all 1s ease;
-  -o-transition: all 1s ease;
+  transition: all 0.4s ease;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
 }
 @keyframes pulse {
   70% {
@@ -4600,6 +4600,40 @@ a {
   right: 0vw !important;
 }
 
+.five-steps-eng .five-steps__step_text {
+  max-width: 80%;
+}
+
+.five-steps-eng.activate-animation .five-steps__animated-line_dot-2 {
+  left: 252px;
+}
+
+.five-steps-eng.activate-animation .five-steps__animated-line_dot-3 {
+  left: 557px;
+}
+
+.five-steps-eng.activate-animation .five-steps__animated-line_dot-4 {
+  left: 767px;
+}
+
+.five-steps-eng.activate-animation .five-steps__animated-line_dot-5 {
+  left: 968px;
+}
+
+@media (min-width: 768px) and (max-width: 1217px) {
+  .five-steps-eng .five-steps__animated-line_dot-2 {
+    left: 148px !important;
+  }
+  .five-steps-eng .five-steps__animated-line_dot-3 {
+    left: 332px !important;
+  }
+  .five-steps-eng .five-steps__animated-line_dot-4 {
+    left: 458px !important;
+  }
+  .five-steps-eng .five-steps__animated-line_dot-5 {
+    left: 568px !important;
+  }
+}
 @media (min-width: 376px) and (max-width: 767px) {
   :root {
     font-size: 20px !important;
@@ -4712,6 +4746,13 @@ a {
   }
   .ecology__text_heading_flag {
     margin-top: 7px;
+  }
+  .policy-offer__text-wrapper {
+    min-width: 375px;
+    max-width: 100%;
+  }
+  .advantages__item {
+    padding: 40px 10px 47px 30px;
   }
 }
 @media (min-width: 490px) and (max-width: 767px) {
